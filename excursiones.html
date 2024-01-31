@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Adventure, Tours, Travel">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--====== Title ======-->
+    <title>Karib</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Google Fonts ======-->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!--====== Flaticon css ======-->
+    <link rel="stylesheet" href="assets/fonts/flaticon/flaticon_gowilds.css">
+    <!--====== FontAwesome css ======-->
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!--====== magnific-popup css ======-->
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/dist/magnific-popup.css">
+    <!--====== Slick-popup css ======-->
+    <link rel="stylesheet" href="assets/vendor/slick/slick.css">
+    <!--====== Jquery UI css ======-->
+    <link rel="stylesheet" href="assets/vendor/jquery-ui/jquery-ui.min.css">
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="assets/vendor/nice-select/css/nice-select.css">
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="assets/vendor/animate.css">
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/scss/scss-karib/main.css">
+</head>
+
+<body class="k-theme-f">
+    <!--====== Start Preloader ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="pre-shadow"></div>
+            <div class="pre-box"></div>
+        </div>
+    </div><!--====== End Preloader ======-->
+    <!--====== Header Area ======-->
+    <header class="k-header k-is-header__variant header-area header-one transparent-header">
+        <!--====== Header Navigation ======-->
+        <div class="header-navigation navigation-white">
+            <div class="nav-overlay"></div>
+            <div class="container-fluid">
+                <div class="primary-menu">
+                    <!--====== Site Branding ======-->
+                    <div class="site-branding">
+                        <a href="index.html" class="brand-logo"><img src="assets/images/imgKarib/logo.png"
+                                alt="Site Logo"></a>
+                    </div>
+                    <!--====== Nav Menu ======-->
+                    <div class="nav-menu">
+                        <!--====== Site Branding ======-->
+                        <div class="mobile-logo mb-30 d-block d-xl-none">
+                            <a href="index.html" class="brand-logo"><img src="assets/images/imgKarib/logo.png"
+                                    alt="Site Logo"></a>
+                        </div>
+                        <!--=== Nav Search ===-->
+                        <!--====== main Menu ======-->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="menu-item"><a href="index.html">Inicio</a>
+                                </li>
+                                <li class="menu-item"><a href="nosotros.html">Nosotros</a>
+                                </li>
+                                <li class="menu-item "><a href="#" class="active">Excursiones</a>
+                                </li>
+                                <li class="menu-item"><a href="#">Cursos</a>
+                                </li>
+                                <li class="menu-item"><a href="ventas.html">Venta de equipos</a>
+                                </li>
+                                <li class="menu-item"><a href="blog.html">KariBlog</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--====== Nav Right Item ======-->
+                    <div class="nav-right-item">
+                        <div class="menu-button d-xl-block d-none">
+                            <a href="contacto.html" class="main-btn primary-btn">Contáctanos <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                        fill="none">
+                                        <path
+                                            d="M9.2989 10.4364V1.13752C9.2989 0.818308 9.40868 0.548917 9.62825 0.32935C9.84782 0.109784 10.1172 0 10.4364 0H17.5022C17.8214 0 18.0908 0.109784 18.3103 0.32935C18.5299 0.548917 18.6397 0.818308 18.6397 1.13752V6.26305C18.6397 6.58227 18.5299 6.85166 18.3103 7.07123C18.0908 7.29078 17.8214 7.40055 17.5022 7.40055H12.3348L9.2989 10.4364ZM11.5739 5.12555H16.3647V2.27502H11.5739V5.12555ZM17.1592 18.4065C15.0516 18.4065 12.9692 17.9474 10.9122 17.0291C8.85515 16.1108 6.98133 14.8074 5.29075 13.1188C3.60017 11.4302 2.29572 9.55669 1.37742 7.49832C0.459141 5.43996 0 3.35628 0 1.2473C0 0.890933 0.118217 0.593958 0.35465 0.356375C0.591083 0.118792 0.886633 0 1.2413 0H5.28533C5.61032 0 5.8884 0.0961073 6.11955 0.288324C6.35072 0.480541 6.49493 0.726832 6.55218 1.0272L7.1962 4.40165C7.24547 4.7281 7.23812 5.00491 7.17417 5.23207C7.11022 5.45926 6.98767 5.65745 6.80652 5.82665L4.34565 8.22882C4.66303 8.80164 5.03894 9.35961 5.47337 9.90272C5.90779 10.4458 6.39202 10.9761 6.92607 11.4935C7.42283 11.9902 7.9346 12.4455 8.4614 12.8593C8.98822 13.273 9.54039 13.6473 10.1179 13.9821L12.5098 11.6081C12.7036 11.4183 12.9413 11.2819 13.2228 11.1989C13.5043 11.116 13.7917 11.0991 14.0848 11.1484L17.3734 11.8305C17.6904 11.921 17.9408 12.0747 18.1247 12.2916C18.3086 12.5084 18.4005 12.767 18.4005 13.0674V17.1593C18.4005 17.5156 18.2816 17.8126 18.0438 18.0502C17.8059 18.2878 17.511 18.4065 17.1592 18.4065ZM3.25815 6.10763L4.90218 4.51142L4.48913 2.27502H2.30598C2.38134 2.93046 2.49095 3.57744 2.6348 4.21597C2.77865 4.85451 2.98643 5.48506 3.25815 6.10763ZM12.232 15.0875C12.8581 15.3589 13.4977 15.5759 14.1508 15.7386C14.8039 15.9013 15.4621 16.0116 16.1255 16.0696V13.8995L13.8951 13.4364L12.232 15.0875Z" />
+                                    </svg>
+                                </i></a>
+                        </div>
+                        <div class="navbar-toggler">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--====== End Area ======-->
+    <!--====== Start Breadcrumb Section ======-->
+    <section class="k-c-page-banner  pt-170 pb-170 page-banner overlay bg_cover"
+        style="background-image: url(assets/images/imgKarib/banner-excursiones.png);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="page-banner-content text-center text-white">
+                        <h1 class="page-title">Explora vive disfruta</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--====== End Breadcrumb Section ======-->
+    <!--====== Start Booking Section ======-->
+    <section class="k-c-booking-form booking-form-section pb-100">
+        <div class="container-fluid">
+            <div class="booking-form-wrapper p-r z-2">
+                <form action="#" class="booking-form-two">
+                    <div class="form_group">
+                        <span>Fecha de la experiencia</span>
+                        <label><i class="far fa-calendar-alt"></i></label>
+                        <input type="text" class="form_control datepicker" placeholder="Check in">
+                    </div>
+                    <div class="form_group">
+                        <span>Persona a cargo</span>
+                        <label><i class="far fas fa-user"></i></label>
+                        <input type="text" class="form_control" placeholder="Nombre">
+                    </div>
+                    <div class="form_group">
+                        <span>Pax</span>
+                        <select class="wide">
+                            <option data-display="Número de personas">Número de personas</option>
+                            <option value="01">01 persona</option>
+                            <option value="01">02 personas</option>
+                            <option value="01">03 personas</option>
+                            <option value="01">04 personas</option>
+                            <option value="01">05 personas</option>
+                        </select>
+                    </div>
+                    <div class="form_group">
+                        <button class="main-btn primary-btn">Comprobar disponibilidad
+                            <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section><!--====== End Booking Section ======-->
+    <!--====== Start Places Section ======-->
+    <section class="k-c-places places-section pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-1.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">City tour cartagena</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Cartagena de Indias</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$180.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>1.5 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-2.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">Excursión barú</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Barú</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$920.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>10 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-3.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">Kañanas cartagena</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Cartagena de Indias</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$180.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>1 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-4.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">excursión Punta arena</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Punta Arena</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$210.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>4 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-5.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">paseo laguna san lázaro</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Cartagena de Indias</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$180.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>1 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-6.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">sunset cartagena</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Cartagena de Indias</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$170.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>1 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Básico</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-7.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">travesía 360 tierra bomba</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Isla de Tierra Bomba</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$400.000 COP - $600.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>9 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Medio</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                    <!--=== Single Place Item ===-->
+                    <div class="single-place-item mb-60 wow fadeInUp">
+                        <div class="place-img">
+                            <img src="assets/images/imgKarib/excursiones-8.png" alt="Place Image">
+                        </div>
+                        <div class="place-content">
+                            <div class="info">
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><span>(5.0)</span></li>
+                                </ul>
+                                <h4 class="title"><a href="detalle-excursiones.html">Travesía Islas Barú y Rosario</a>
+                                </h4>
+                                <p class="location"><i class="far fa-map-marker-alt"></i>Islas</p>
+                                <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">$1.800.000 COP
+                                </p>
+                                <div class="meta">
+                                    <span><i class="fas fa-stopwatch"></i>6 horas</span>
+                                    <span><i class="far fa-chart-line"></i>Medio</span>
+                                    <span><a href="detalle-excursiones.html">Detalles<i
+                                                class="fas fa-arrow-right"></i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=== Gowilds Pagination ===-->
+                    <ul class="gowilds-pagination wow fadeInUp text-center">
+                        <li><a href="#" class="prev"><i class="far fa-arrow-left"></i></a></li>
+                        <li><a href="#" class="active">01</a></li>
+                        <li><a href="#">02</a></li>
+                        <li><a href="#">03</a></li>
+                        <li><a href="#">04</a></li>
+                        <li><a href="#" class="next"><i class="far fa-arrow-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--====== End Places Section ======-->
+    <!--====== Start Gallery Section ======-->
+    <section class="k-c-gallery gallery-section mbm-150">
+        <div class="container-fluid">
+            <div class="slider-active-5-item wow fadeInUp">
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-1.png" alt="Gallery Image">
+                    </div>
+                </div>
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-2.png" alt="Gallery Image">
+                    </div>
+                </div>
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-3.png" alt="Gallery Image">
+                    </div>
+                </div>
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-4.png" alt="Gallery Image">
+                    </div>
+                </div>
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-5.png" alt="Gallery Image">
+                    </div>
+                </div>
+                <!--=== Single Gallery Item ===-->
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-6.jpeg" alt="Gallery Image">
+                    </div>
+                </div>
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-7.jpeg" alt="Gallery Image">
+                    </div>
+                </div>
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-8.jpeg" alt="Gallery Image">
+                    </div>
+                </div>
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-9.jpeg" alt="Gallery Image">
+                    </div>
+                </div>
+                <div class="single-gallery-item">
+                    <div class="gallery-img">
+                        <img src="assets/images/imgKarib/carusel-footer-10.jpeg" alt="Gallery Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--====== End Gallery Section ======-->
+    <!--====== Start Footer ======-->
+    <footer class="k-c-footer main-footer pt-230">
+        <div class="container">
+            <!--=== Footer Top ===-->
+            <div class="footer-top pt-40 wow fadeInUp">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <!--=== Single Info Item ===-->
+                        <div class="single-info-item mb-40">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21"
+                                    fill="none">
+                                    <path
+                                        d="M8.48045 10.6218C9.07755 10.6218 9.58371 10.4141 9.99893 9.99893C10.4141 9.58371 10.6217 9.07755 10.6217 8.48045C10.6217 7.88335 10.4141 7.37719 9.99893 6.96198C9.58371 6.54676 9.07755 6.33915 8.48045 6.33915C7.88335 6.33915 7.37719 6.54676 6.96198 6.96198C6.54676 7.37719 6.33915 7.88335 6.33915 8.48045C6.33915 9.07755 6.54676 9.58371 6.96198 9.99893C7.37719 10.4141 7.88335 10.6218 8.48045 10.6218ZM8.48045 17.4489C10.4478 15.6576 11.9114 14.0583 12.8712 12.6511C13.831 11.2439 14.3109 9.90146 14.3109 8.62393C14.3109 6.87351 13.748 5.44025 12.6224 4.32415C11.4967 3.20807 10.1159 2.65003 8.47995 2.65003C6.84405 2.65003 5.46343 3.20807 4.33808 4.32415C3.21271 5.44025 2.65003 6.87351 2.65003 8.62393C2.65003 9.90146 3.12992 11.2415 4.0897 12.644C5.04948 14.0466 6.51307 15.6482 8.48045 17.4489ZM8.48045 20.9609C5.64638 18.5834 3.52446 16.4037 2.11468 14.4218C0.704892 12.4399 0 10.5073 0 8.62393C0 5.99468 0.852458 3.90004 2.55737 2.34003C4.26231 0.780009 6.23667 0 8.48045 0C10.7242 0 12.6986 0.780009 14.4035 2.34003C16.1084 3.90004 16.9609 5.99468 16.9609 8.62393C16.9609 10.5073 16.256 12.4399 14.8462 14.4218C13.4364 16.4037 11.3145 18.5834 8.48045 20.9609Z"
+                                        fill="#202527" />
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <span class="title">Como llegar</span>
+                                <p>Cl. 5, Castillogrande,</p>
+                                <span>Cartagena de Indias - Colombia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <!--=== Single Info Item ===-->
+                        <div class="single-info-item mb-40">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                    fill="none">
+                                    <path
+                                        d="M10.4663 20.9609C9.02152 20.9609 7.66377 20.6866 6.39305 20.1381C5.12232 19.5895 4.0134 18.8417 3.0663 17.8946C2.1192 16.9475 1.37137 15.837 0.8228 14.563C0.274267 13.289 0 11.9278 0 10.4793C0 9.03078 0.274275 7.66993 0.822825 6.39675C1.37137 5.12355 2.1192 4.0134 3.0663 3.0663C4.0134 2.1192 5.12394 1.37138 6.39793 0.822826C7.67189 0.274276 9.03312 0 10.4816 0C11.9301 0 13.291 0.274276 14.5642 0.822826C15.8374 1.37138 16.9475 2.1192 17.8946 3.0663C18.8417 4.0134 19.5895 5.12232 20.1381 6.39305C20.6866 7.66377 20.9609 9.02153 20.9609 10.4663V11.9163C20.9609 12.9623 20.5857 13.8531 19.8354 14.5889C19.085 15.3246 18.1757 15.6924 17.1076 15.6924C16.4937 15.6924 15.9149 15.5627 15.3711 15.3033C14.8273 15.0439 14.3805 14.662 14.0305 14.1576C13.5848 14.6786 13.0531 15.0647 12.4353 15.3158C11.8176 15.5669 11.1659 15.6924 10.4804 15.6924C9.03117 15.6924 7.80018 15.1861 6.7875 14.1734C5.77482 13.1607 5.26848 11.9297 5.26848 10.4805C5.26848 9.03117 5.77482 7.80018 6.7875 6.7875C7.80018 5.77482 9.03117 5.26848 10.4804 5.26848C11.9297 5.26848 13.1607 5.77482 14.1734 6.7875C15.1861 7.80018 15.6924 9.03117 15.6924 10.4805V11.8033C15.6924 12.2129 15.8294 12.5595 16.1033 12.8431C16.3772 13.1267 16.7166 13.2685 17.1214 13.2685C17.5263 13.2685 17.8611 13.1267 18.1258 12.8431C18.3905 12.5595 18.5229 12.2129 18.5229 11.8033V10.4663C18.5229 8.23299 17.7408 6.33662 16.1767 4.7772C14.6125 3.21777 12.7138 2.43805 10.4804 2.43805C8.24712 2.43805 6.34838 3.22012 4.78425 4.78425C3.22012 6.34838 2.43805 8.24712 2.43805 10.4805C2.43805 12.7138 3.21777 14.6125 4.7772 16.1767C6.33662 17.7408 8.23488 18.5229 10.472 18.5229H15.4805V20.9609H10.4663ZM10.483 13.2685C11.2581 13.2685 11.9161 12.9972 12.4571 12.4546C12.998 11.912 13.2685 11.2531 13.2685 10.478C13.2685 9.7028 12.9972 9.04476 12.4546 8.50383C11.912 7.96289 11.2531 7.69243 10.478 7.69243C9.7028 7.69243 9.04476 7.96373 8.50383 8.50632C7.96289 9.04892 7.69242 9.7078 7.69242 10.483C7.69242 11.2581 7.96373 11.9161 8.50632 12.4571C9.04892 12.998 9.7078 13.2685 10.483 13.2685Z"
+                                        fill="#202527" />
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <span class="title">Correo</span>
+                                <p><a href="mailto:info@karibkayakypaddle.com">info@karibkayakypaddle.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <!--=== Single Info Item ===-->
+                        <div class="single-info-item mb-40">
+                            <div class="icon">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path
+                                        d="M16.8055 9.2261C16.8055 7.2761 16.1263 5.62193 14.768 4.2636C13.4096 2.90527 11.7555 2.2261 9.80548 2.2261V0C11.0837 0 12.2805 0.242208 13.3957 0.726625C14.5109 1.21104 15.4845 1.8692 16.3164 2.7011C17.1482 3.53298 17.8064 4.50823 18.2908 5.62685C18.7752 6.74548 19.0175 7.94523 19.0175 9.2261H16.8055ZM12.5794 9.2261C12.5794 8.44928 12.3113 7.79041 11.775 7.24948C11.2388 6.70854 10.5823 6.43808 9.80548 6.43808V4.2261C11.1888 4.2261 12.368 4.7136 13.343 5.6886C14.318 6.6636 14.8055 7.84277 14.8055 9.2261H12.5794ZM17.4446 19.2859C15.3038 19.2859 13.1887 18.82 11.0993 17.8881C9.00993 16.9562 7.10363 15.631 5.38045 13.9125C3.65725 12.1941 2.32971 10.2886 1.39782 8.19608C0.465942 6.10356 0 3.98532 0 1.84135C0 1.40812 0.143067 1.04708 0.4292 0.75825C0.715333 0.469434 1.073 0.325024 1.5022 0.325024H5.53807C5.98807 0.325024 6.36127 0.444225 6.65765 0.682625C6.95403 0.921041 7.14716 1.2475 7.23703 1.662L7.87287 4.86525C7.94389 5.27323 7.93792 5.6207 7.85495 5.90765C7.77198 6.19462 7.60731 6.44716 7.36093 6.66528L4.85113 9.00222C5.14678 9.51526 5.49551 10.0216 5.89733 10.5212C6.29912 11.0209 6.75618 11.5185 7.2685 12.0142C7.73807 12.4837 8.20908 12.9064 8.68155 13.2821C9.154 13.6578 9.64095 13.9913 10.1424 14.2826L12.5913 11.8761C12.8449 11.6319 13.1397 11.4629 13.4756 11.369C13.8114 11.2752 14.1667 11.2638 14.5414 11.3348L17.6098 11.9924C18.041 12.1156 18.3716 12.3141 18.6017 12.588C18.8317 12.862 18.9468 13.2062 18.9468 13.6207V17.7696C18.9468 18.2028 18.802 18.5639 18.5126 18.8527C18.2231 19.1415 17.8671 19.2859 17.4446 19.2859ZM3.5761 6.57937L5.21197 5.05655L4.81525 2.97505H2.68915C2.75365 3.59243 2.85363 4.20121 2.9891 4.80137C3.12457 5.40154 3.32023 5.99421 3.5761 6.57937ZM12.5826 15.6C13.1761 15.8551 13.7844 16.0613 14.4076 16.2185C15.0308 16.3757 15.6605 16.4888 16.2968 16.5577V14.4283L14.2294 13.9815L12.5826 15.6Z"
+                                        fill="#202527" />
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <span class="title">Llamanos</span>
+                                <p><a href="tel:+573187559138">(+57) 318 7559738</a></p>
+                                <p><a href="tel:+573186037765">(+57) 318 6037765</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <!--=== Social Box ===-->
+                        <div class="social-box mb-40 float-lg-end">
+                            <ul class="social-link">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-tripadvisor"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=== Footer Widget ===-->
+            <div class="footer-widget-area pt-75 pb-30">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <!--=== Footer Widget ===-->
+                        <div class="footer-widget about-company-widget mb-40 wow fadeInUp">
+                            <h4 class="widget-title">Conócenos</h4>
+                            <div class="footer-content">
+                                <p>Déjanos sorprenderte con nuestras experiencias únicas llenas de color y aventura.</p>
+                                <a href="#" class="footer-logo"><img src="assets/images/imgKarib/logo.png"
+                                        alt="Site Logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <!--=== Footer Widget ===-->
+                        <div class="footer-widget service-nav-widget mb-40 pl-lg-70 wow fadeInDown">
+                            <h4 class="widget-title">Servicios</h4>
+                            <div class="footer-content">
+                                <ul class="footer-widget-nav">
+                                    <li><a href="#">Excursiones</a></li>
+                                    <li><a href="#">Cursos</a></li>
+                                    <li><a href="#">Alquiler</a></li>
+                                    <li><a href="ventas.html">Venta de equipos</a></li>
+                                </ul>
+                                <ul class="footer-widget-nav">
+                                    <li><b>¿Tienes dudas?</b></li>
+                                    <li><a href="#">Preguntas frecuentes</a></li>
+                                    <li><a href="contacto.html">Contáctanos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <!--=== Footer Widget ===-->
+                        <div class="footer-widget footer-newsletter-widget mb-40 pl-lg-100 wow fadeInUp">
+                            <h4 class="widget-title">Noticias</h4>
+                            <div class="footer-content">
+                                <p>Suscríbete a nuestro boletín mensual y mantente informado.</p>
+                                <form>
+                                    <div class="form_group">
+                                        <label><i class="far fa-calendar-alt"></i></label>
+                                        <input type="email" class="form_control" placeholder="Correo electrónico"
+                                            name="email" required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=== Footer Copyright ===-->
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!--=== Footer Text ===-->
+                        <div class="footer-text">
+                            <p>Copy© 2023 <span style="color: #FF6601;">GESPROIS</span>. Todos los derechos reservados.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!--=== Footer Nav ===-->
+                        <div class="footer-nav float-lg-end">
+                            <ul>
+                                <li><a href="#">Tratamiento de datos</a></li>
+                                <li><a href="#">Uso de cookies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!--====== End Footer ======-->
+    <!--====== Back To Top  ======-->
+    <a href="#" class="k-c-btn-top back-to-top"><i class="far fa-angle-up"></i></a>
+    <!--====== Jquery js ======-->
+    <script src="assets/vendor/jquery-3.6.0.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/vendor/popper/popper.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--====== Slick js ======-->
+    <script src="assets/vendor/slick/slick.min.js"></script>
+    <!--====== Magnific js ======-->
+    <script src="assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <!--====== Counterup js ======-->
+    <script src="assets/vendor/jquery.counterup.min.js"></script>
+    <!--====== Waypoints js ======-->
+    <script src="assets/vendor/jquery.waypoints.js"></script>
+    <!--====== Nice-select js ======-->
+    <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+    <!--====== jquery UI js ======-->
+    <script src="assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <!--====== WOW js ======-->
+    <script src="assets/vendor/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

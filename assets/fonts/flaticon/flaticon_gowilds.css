@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "flaticon_gowilds";
+  src: url("./flaticon_gowilds.ttf?d0235de0bbc7ec3e6bca4c8fddee355a") format("truetype"), url("./flaticon_gowilds.woff?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff"), url("./flaticon_gowilds.woff2?d0235de0bbc7ec3e6bca4c8fddee355a") format("woff2"), url("./flaticon_gowilds.eot?d0235de0bbc7ec3e6bca4c8fddee355a#iefix") format("embedded-opentype"), url("./flaticon_gowilds.svg?d0235de0bbc7ec3e6bca4c8fddee355a#flaticon_gowilds") format("svg"); }
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+  font-family: flaticon_gowilds !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.flaticon-helmet:before {
+  content: ""; }
+
+.flaticon-best-price:before {
+  content: ""; }
+
+.flaticon-travel:before {
+  content: ""; }
+
+.flaticon-right-quote:before {
+  content: ""; }
+
+.flaticon-flight:before {
+  content: ""; }
+
+.flaticon-camp:before {
+  content: ""; }
+
+.flaticon-blanket:before {
+  content: ""; }
+
+.flaticon-cat:before {
+  content: ""; }
+
+.flaticon-tent:before {
+  content: ""; }
+
+.flaticon-fire:before {
+  content: ""; }
+
+.flaticon-rabbit:before {
+  content: ""; }
+
+.flaticon-wifi-router:before {
+  content: ""; }
+
+.flaticon-solar-energy:before {
+  content: ""; }
+
+.flaticon-cycling:before {
+  content: ""; }
+
+.flaticon-fishing:before {
+  content: ""; }
+
+.flaticon-gym:before {
+  content: ""; }
+
+.flaticon-hiking:before {
+  content: ""; }
+
+.flaticon-tent-1:before {
+  content: ""; }
+
+.flaticon-reviews:before {
+  content: ""; }
+
+.flaticon-award:before {
+  content: ""; }
+
+.flaticon-quote:before {
+  content: ""; }
+
+.flaticon-camping:before {
+  content: ""; }
+
+.flaticon-cable-car:before {
+  content: ""; }
+
+.flaticon-trailer:before {
+  content: ""; }
+
+.flaticon-firewood:before {
+  content: ""; }
+
+.flaticon-biking-mountain:before {
+  content: ""; }
+
+.flaticon-fishing-1:before {
+  content: ""; }
+
+.flaticon-fishing-2:before {
+  content: ""; }
+
+.flaticon-caravan:before {
+  content: ""; }
+
+.flaticon-world:before {
+  content: ""; }
+
+.flaticon-journey:before {
+  content: ""; }
+
+.flaticon-gps:before {
+  content: ""; }
+
+.flaticon-paper-plane:before {
+  content: ""; }
+
+/*# sourceMappingURL=flaticon_gowilds.css.map */
