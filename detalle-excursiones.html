@@ -75,7 +75,7 @@
                                 </li>
                                 <li class="menu-item "><a href="excursiones.html" class="active">Excursiones</a>
                                 </li>
-                                <li class="menu-item"><a href="#">Cursos</a>
+                                <li class="menu-item"><a href="cursos.html">Cursos</a>
                                 </li>
                                 <li class="menu-item"><a href="ventas.html">Venta de equipos</a>
                                 </li>
@@ -111,24 +111,24 @@
         <div class="place-slider-area overflow-hidden wow fadeInUp">
             <div class="place-bg"></div>
             <div class="place-slider">
-                <div class="place-slider-item">
+                <div class="place-slider-item" id="imgExcursion-0">
                     <div class="place-img">
-                        <img src="assets/images/imgKarib/detalle-excursion-1.png" alt="Place Image">
+                        <img alt="Place Image">
                     </div>
                 </div>
-                <div class="place-item">
+                <div class="place-slider-item" id="imgExcursion-1">
                     <div class="place-img">
-                        <img src="assets/images/imgKarib/detalle-excursion-2.png" alt="Place Image">
+                        <img alt="Place Image">
                     </div>
                 </div>
-                <div class="place-slider-item">
+                <div class="place-slider-item" id="imgExcursion-2">
                     <div class="place-img">
-                        <img src="assets/images/imgKarib/detalle-excursion-3.png" alt="Place Image">
+                        <img alt="Place Image">
                     </div>
                 </div>
-                <div class="place-slider-item">
+                <div class="place-slider-item" id="imgExcursion-3">
                     <div class="place-img">
-                        <img src="assets/images/imgKarib/detalle-excursion-4.png" alt="Place Image">
+                        <img alt="Place Image">
                     </div>
                 </div>
             </div>
@@ -141,8 +141,9 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="tour-title mb-20">
-                                <h3 class="title">city tour cartagena</h3>
-                                <p><i class="far fa-map-marker-alt"></i>Cartagena de Indias - Colombia</p>
+                                <h3 class="title" id="nameExcursion"></h3>
+                                <p><i class="far fa-map-marker-alt"></i><span id="locationExcursion"></span> - Colombia
+                                </p>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -157,7 +158,9 @@
                                         </svg>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Desde</span>$96.54</h4>
+                                        <h4><span>Desde</span>
+                                            <h4 id="priceExcursion"></h4>
+                                        </h4>
                                     </div>
                                 </div>
                                 <div class="info-box mb-20">
@@ -170,7 +173,9 @@
                                         </svg>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Duración</span>1.5 horas</h4>
+                                        <h4><span>Duración</span>
+                                            <h4 id="timeExcursion"></h4>
+                                        </h4>
                                     </div>
                                 </div>
                                 <div class="info-box mb-20">
@@ -183,7 +188,9 @@
                                         </svg>
                                     </div>
                                     <div class="info">
-                                        <h4><span>Nivel</span>Básico</h4>
+                                        <h4><span>Nivel</span>
+                                            <h4 id="levelExcursion"></h4>
+                                        </h4>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +214,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="share-nav">
-                                <a href="#">Ver ficha técnica<i class="fas fa-minus"></i></a>
+                                <a id="sheetExcursion">Ver ficha técnica<i class="fas fa-minus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -216,47 +223,14 @@
                     <div class="col-xl-8">
                         <!--=== Place Content Wrap ===-->
                         <div class="place-content-wrap pt-45 wow fadeInUp">
-                            <h3 class="title">El tour</h3>
-                            <p>En este City Tour vivirás la experiencia de conocer Cartagena de Indias y parte de su
-                                historia desde el Caribe a bordo de un kayak de mar descubriendo una cara para muchos
-                                desconocida de la ciudad; navegaras por el muelle los Pegasos desde donde tendrás una
-                                vista única de la Torre del Reloj, el camellón de los Mártires y el Centro de
-                                Convenciones, tras el paso por el puente Román disfrutaras de la laguna de San Lázaro
-                                y sus manglares que se extienden a lo largo de la única porción de muralla que se
-                                conserva sobre el mar hasta llegar a la isla de los pájaros, una isla de mangle en la
-                                que habitan un sin número de aves las cuales acompañan nuestro paso con sus melodiosos
-                                cantos.</p>
-                            <h4>Para tener en cuenta</h4>
-                            <p>Recomendamos llevar lo siguiente: Protector solar, gafas de sol, gorra o sombrero, ropa
-                                de recambio, repelente, zapatos de mojar, rashguard con filtro UV. Por otra parte,
-                                nosotros incluiremos:</p>
-                            <div class="row ">
-                                <div class="col-lg-5">
-                                    <ul class="check-list">
-                                        <li><i class="fas fa-badge-check"></i>Equipo (kayak, cubrebañera, pala y
-                                            chaleco salvavidas)</li>
-                                        <li><i class="fas fa-badge-check"></i>Instrucción básica en tierra</li>
-                                        <li><i class="fas fa-badge-check"></i>Guía</li>
-                                        <li><i class="fas fa-badge-check"></i>Botella de agua</li>
-                                        <li><i class="fas fa-badge-check"></i>Seguro personal</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-7">
-                                    <img src="assets/images/imgKarib/detalle-list.png" class="mb-20 w-100"
-                                        alt="place image">
-                                </div>
-                            </div>
-                            <h4>Punto de encuentro</h4>
-                            <p>Primer muelle al lado del Fuerte San Sebastián de Pastelillo sobre el paso peatonal de
-                                Manga, frente al edificio Punta Madero. <a href="#">Click aquí para saber como
-                                    llegar.</a></p>
+                            <div id="descriptionExcursion"></div>
                         </div>
                         <!--=== Days Area ===-->
                         <div class="days-area mb-55 wow fadeInUp">
                             <ul class="nav nav-tabs mb-35">
                                 <li class="nav-item">
                                     <button class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#day1">Disponibilidad</button>
+                                        data-bs-target="#day1">Incluye</button>
                                 </li>
                                 <li class="nav-item">
                                     <button class="nav-link" data-bs-toggle="tab"
@@ -265,46 +239,33 @@
                                 <li class="nav-item">
                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#day3">Salida</button>
                                 </li>
-                                <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#day4">Retorno</button>
-                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="day1">
-                                    <div class="content-box">
-                                        <p>Salidas de lunes a viernes (excepto festivos) 8:00 am, 10:00 am y 4:00 pm
-                                            </p>
-                                            <p><b>(Se recomienda llegar 10 minutos antes)</b></p>
+                                    <div class="content-box" id="include">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="day2">
-                                    <div class="content-box">
-                                        <p>Nos prepararemos y tomaremos indicaciones básicas para salir a navegar.</p>
+                                    <div class="content-box" id="checklist">
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="day3">
-                                    <div class="content-box">
-                                        <p>Saldremos desde del primer muelle al lado del Fuerte San Sebastián de
-                                            Pastelillo, sobre el paso peatonal de Manga, frente al edificio Punta
-                                            Madero.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="day4">
-                                    <div class="content-box">
-                                        <p>Retornaremos al punto de partida.</p>
+                                    <div class="content-box" id="itenirary">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <p class="text-finish">Estamos comprometido con el cuidado y protección de nuestros niños, niñas y adolescentes
+                        <p class="text-finish">Estamos comprometido con el cuidado y protección de nuestros niños,
+                            niñas y adolescentes
                             por lo que informa que la explotación y abuso sexual de menores de edad es sancionado con
                             pena privativa de la libertad, de conformidad con lo previsto en la ley 679 de 2001.</p>
-                        <p class="text-finish">Estamos comprometido con salvaguardar y evitar el tráfico ilegal de flora y fauna, acorde
+                        <p class="text-finish">Estamos comprometido con salvaguardar y evitar el tráfico ilegal de
+                            flora y fauna, acorde
                             con el artículo 328 de la ley 599 del 2000.
                         </p>
-                        <p class="text-finish">Estamos comprometido con la prevención del tráfico ilícito de bienes culturales conforme
+                        <p class="text-finish">Estamos comprometido con la prevención del tráfico ilícito de bienes
+                            culturales conforme
                             a la ley 1185 de 2008.</p>
                     </div>
                     <div class="col-xl-4">
@@ -312,34 +273,29 @@
                         <div class="sidebar-widget-area pt-60 pl-lg-30">
                             <!--=== Booking Widget ===-->
                             <div class="sidebar-widget booking-form-widget wow fadeInUp mb-40">
-                                <h4 class="widget-title">Booking Tour</h4>
+                                <h4 class="widget-title">Servicios adicionales</h4>
                                 <form class="sidebar-booking-form">
                                     <div class="booking-date-time mb-20">
                                         <div class="booking-item">
-                                            <label>Fecha</label>
-                                            <div class="bk-item booking-time">
-                                                <i class="far fa-calendar-alt"></i>
-                                                <input type="text" placeholder="Select Date" class="datepicker">
+                                            <label>Transporte</label>
+                                            <div class="bk-item booking-user">
+                                                <i class="fa fa-car"></i>
+                                                <select class="wide">
+                                                    <option value="01">NO</option>
+                                                    <option value="02">SI</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="booking-item">
-                                            <label>Hora</label>
-                                            <div class="bk-item booking-date">
-                                                <i class="far fa-stopwatch"></i>
+                                            <label>Pax</label>
+                                            <div class="bk-item booking-user">
+                                                <i class="far fa-user"></i>
                                                 <select class="wide">
-                                                    <option value="01">12.00 Am</option>
-                                                    <option value="01">01.00 Am</option>
-                                                    <option value="01">02.00 Am</option>
-                                                    <option value="01">03.00 Am</option>
-                                                    <option value="01">04.00 Am</option>
-                                                    <option value="01">05.00 Am</option>
-                                                    <option value="01">06.00 Am</option>
-                                                    <option value="01">07.00 Am</option>
-                                                    <option value="01">08.00 Am</option>
-                                                    <option value="01">09.00 Am</option>
-                                                    <option value="01">10.00 Am</option>
-                                                    <option value="01">11.00 Am</option>
-                                                    <option value="01">12.00 Pm</option>
+                                                    <option value="01">1</option>
+                                                    <option value="02">2</option>
+                                                    <option value="03">3</option>
+                                                    <option value="04">4</option>
+                                                    <option value="05">5</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -387,20 +343,10 @@
                                         </div>
                                     </div>
                                     <div class="booking-extra mb-15 wow fadeInUp">
-                                        <h6 class="mb-10">Servicios adicionales</h6>
+                                        <h6 class="mb-10">Booking tour</h6>
                                         <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Reserva por persona <span><span
-                                                    class="currency">$80.000 COP</span>
-                                        </div>
-                                        <div class="extra">
-                                            <i class="fas fa-check-circle"></i>Seguro por personan <span><span
-                                                    class="currency">$70.000 COP</span>
-                                        </div>
-                                    </div>
-                                    <div class="booking-total mb-20">
-                                        <div class="total">
-                                            <label>Total</label>
-                                            <span class="price"><span class="currency">$310.000 COP</span>
+                                            <i class="fas fa-check-circle"></i>Precio experiencia<span><span
+                                                    class="currency" id="priceForm"></span>
                                         </div>
                                     </div>
                                     <div class="submit-button">
@@ -420,10 +366,17 @@
                             <div class="sidebar-widget booking-info-widget wow fadeInUp mb-40">
                                 <h4 class="widget-title">Información adicional</h4>
                                 <ul class="info-list">
-                                    <li><span><i class="far fa-user-circle"></i>Mínimo de personas<span>2</span></span></li>
-                                    <li><span><i class="far fa-user-circle"></i>Edad mínima<span>+12 años</span></span></li>
-                                    <li><span><i class="far fa-map-marker-alt"></i>Lugar<span>Cartagena de Indias</span></span></li>
-                                    <li><span><i class="far fa-globe"></i>Idioma<span>Español / Ingles</span></span></li>
+                                    <li><span><i class="far fa-user-circle"></i>Mínimo de personas<span
+                                                id="people"></span></span>
+                                    </li>
+                                    <li><span><i class="far fa-user-circle"></i>Edad mínima<span
+                                                id="ageExcursion"></span></span>
+                                    </li>
+                                    <li><span><i class="far fa-map-marker-alt"></i>Lugar<span
+                                                id="locationTour"></span></span></li>
+                                    <li><span><i class="far fa-globe"></i>Idioma<span
+                                                id="languageExcursion"></span></span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -666,6 +619,13 @@
     <script src="assets/vendor/wow.min.js"></script>
     <!--====== Main js ======-->
     <script src="assets/js/theme.js"></script>
+    <script type="text/javascript" src="assets/js/js_backoffice/application.js"></script>
+    <script src="assets/js/js_backoffice/excursion.js"></script>
+    <script>
+        let params = new URLSearchParams(document.location.search);
+        let idExcursion = params.get("id");
+        excursionClient.get(idExcursion)
+    </script>
 </body>
 
 </html>

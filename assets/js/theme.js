@@ -409,7 +409,7 @@
         $('.place-slider').slick({
             dots: false,
             arrows: false,
-            infinite: true,
+            infinite: false,
             speed: 800,
             autoplay: true,
             variableWidth: true,
