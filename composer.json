@@ -1,0 +1,5 @@
+{
+    "require": {
+        "paypal/paypalhttp": "^1.0"
+    }
+}

@@ -101,6 +101,7 @@ var courseClientUIManager = {
     let name = itemData.nombre;
     let location = itemData.ubicacion;
     let price = itemData.precio;
+    let curr = itemData.currency;
     let time = itemData.duracion;
     let level = itemData.nivel;
 
@@ -122,7 +123,7 @@ var courseClientUIManager = {
                                   <h4 class="title"><a href="detalle-curso.html?id=${id}">${name}</a>
                                   </h4>
                                   <p class="location"><i class="far fa-map-marker-alt"></i>${location}</p>
-                                  <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">${price}
+                                  <p class="price"><i class="fas fa-usd-circle"></i><span class="currency">${price} ${curr}
                                   </p>
                                   <div class="meta">
                                       <span><i class="fas fa-stopwatch"></i>${time}</span>
@@ -146,10 +147,13 @@ var courseClientUIManager = {
 
     document.getElementById("nameExcursion").innerText = dataset.nombre;
     document.getElementById("locationExcursion").innerText = dataset.ubicacion;
-    document.getElementById("priceExcursion").innerText = dataset.precio;
+    document.getElementById("priceExcursion").innerText = dataset.precio + " " + dataset.currency;
     document.getElementById("timeExcursion").innerText = dataset.duracion;
     document.getElementById("levelExcursion").innerText = dataset.nivel;
-    document.getElementById("priceForm").innerText = dataset.precio;
+    document.getElementById("priceForm").innerText = dataset.precio + " " + dataset.currency;
+    document.getElementById("priceTotal").innerText = dataset.precio;
+    document.getElementById("priceIni").innerText = dataset.precio;
+    document.getElementById("currency").innerText = dataset.currency;
     document
       .getElementById("sheetExcursion")
       .setAttribute(
@@ -176,3 +180,53 @@ var courseClientUIManager = {
     });
   },
 };
+
+// Redirigir al usuario a la página de PayPal con los parámetros de la transacción
+/**
+* Carrito de compras Paypal
+*/
+var paypalButton;
+
+// Función para crear el botón de PayPal
+function createPaypalButton() {
+  paypal.Buttons({
+    createOrder: function (data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          description: document.getElementById("nameExcursion").innerText,
+          amount: {
+            value: document.getElementById("priceTotal").innerText, // Monto del producto
+            currency_code: document.getElementById("currency").innerText // Moneda del producto (peso colombiano)
+          }
+        }]
+      });
+    },
+    onApprove: function (data, actions) {
+      return actions.order.capture().then(function (details) {
+        // Mostrar modal de éxito
+        $('#paypalMessage').text('Pago completado con éxito');
+        $('#paypalModal').modal('show');
+      });
+    },
+    onError: function (err) {
+      // Mostrar modal de error
+      if (err.message.includes('Transaction was rejected')) {
+        $('#paypalMessage').text('La transacción fue rechazada');
+      } else {
+        $('#paypalMessage').text('Ocurrió un error durante la transacción: ' + err.message);
+      }
+      $('#paypalModal').modal('show');
+    },
+    onCancel: function (data) {
+      // Mostrar modal de cancelación
+      $('#paypalMessage').text('La transacción fue cancelada');
+      $('#paypalModal').modal('show');
+    }
+  }).render('#paypal-button-container').then(function (button) {
+    // Almacenar el botón de PayPal
+    paypalButton = button;
+  });
+}
+
+// Crear el botón de PayPal cuando se carga la página
+createPaypalButton();

@@ -45,7 +45,8 @@
             <div class="pre-shadow"></div>
             <div class="pre-box"></div>
         </div>
-    </div><!--====== End Preloader ======-->
+    </div>
+    <!--====== End Preloader ======-->
     <!--====== Header Area ======-->
     <header class="k-header k-is-header__detail header-area header-one">
         <!--====== Header Navigation ======-->
@@ -104,7 +105,8 @@
                 </div>
             </div>
         </div>
-    </header><!--====== End Area ======-->
+    </header>
+    <!--====== End Area ======-->
     <!--====== Start Place Details Section ======-->
     <section class="k-c-place-detail place-details-section">
         <!--=== Place Slider ===-->
@@ -249,11 +251,11 @@
                                             <div class="bk-item booking-user">
                                                 <i class="far fa-user"></i>
                                                 <select class="wide">
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -264,12 +266,13 @@
                                             <label>Adulto (+18 años)</label>
                                             <div class="bk-item booking-user">
                                                 <i class="far fa-user"></i>
-                                                <select class="wide">
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
+                                                <select class="wide miSelector" id="npersonasadultos">
+
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -277,12 +280,13 @@
                                             <label>Jovenes (13 - 17 años)</label>
                                             <div class="bk-item booking-user">
                                                 <i class="far fa-user"></i>
-                                                <select class="wide">
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
+                                                <select class="wide miSelector" id="npersonasjovenes">
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -290,7 +294,8 @@
                                             <label>Niños (0 a 12 años)</label>
                                             <div class="bk-item booking-user">
                                                 <i class="far fa-user"></i>
-                                                <select class="wide">
+                                                <select class="wide miSelector" id="npersonasninios">
+                                                    <option value="0">0</option>
                                                     <option value="01">1</option>
                                                     <option value="02">2</option>
                                                     <option value="03">3</option>
@@ -305,10 +310,13 @@
                                         <div class="extra">
                                             <i class="fas fa-check-circle"></i>Precio experiencia<span><span
                                                     class="currency" id="priceForm"></span>
+                                                <span style="display: none;" id="priceTotal"></span>
+                                                <span style="display: none;" id="priceIni"></span>
+                                                <span style="display: none;" id="currency"></span>
                                         </div>
                                     </div>
-                                    <div class="submit-button">
-                                        <button class="main-btn primary-btn">Comprar ahora
+                                    <div class="submit-button" id="ComprasPaypal">
+                                         <!--<a href="#ComprasPaypal" class="main-btn primary-btn btn-comprar">Comprar ahora
                                             <i>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                                                     viewBox="0 0 21 21" fill="none">
@@ -316,16 +324,39 @@
                                                         d="M11.1016 8.4424L9.5701 6.91087L11.1511 5.31087H7.00598V3.13153H11.1511L9.55107 1.53153L11.1016 0L15.3168 4.2212L11.1016 8.4424ZM6.08968 20.7234C5.53968 20.7234 5.06884 20.5275 4.67718 20.1359C4.28551 19.7442 4.08968 19.2734 4.08968 18.7234C4.08968 18.1734 4.28551 17.7025 4.67718 17.3109C5.06884 16.9192 5.53968 16.7234 6.08968 16.7234C6.63968 16.7234 7.11051 16.9192 7.50218 17.3109C7.89384 17.7025 8.08967 18.1734 8.08967 18.7234C8.08967 19.2734 7.89384 19.7442 7.50218 20.1359C7.11051 20.5275 6.63968 20.7234 6.08968 20.7234ZM16.0897 20.7234C15.5397 20.7234 15.0688 20.5275 14.6772 20.1359C14.2855 19.7442 14.0897 19.2734 14.0897 18.7234C14.0897 18.1734 14.2855 17.7025 14.6772 17.3109C15.0688 16.9192 15.5397 16.7234 16.0897 16.7234C16.6397 16.7234 17.1105 16.9192 17.5022 17.3109C17.8938 17.7025 18.0897 18.1734 18.0897 18.7234C18.0897 19.2734 17.8938 19.7442 17.5022 20.1359C17.1105 20.5275 16.6397 20.7234 16.0897 20.7234ZM0 2.72338V0.544026H3.42445L7.62663 9.44837H14.6027L18.4549 2.54403H20.9451L16.5152 10.5359C16.3239 10.8812 16.0672 11.1505 15.7451 11.3438C15.4231 11.5371 15.0705 11.6337 14.6875 11.6337H7.2913L6.24512 13.544H18.1793V15.7234H6.08968C5.29983 15.7234 4.70109 15.3834 4.29348 14.7036C3.88587 14.0237 3.87337 13.3344 4.25598 12.6359L5.58805 10.2337L2.03588 2.72338H0Z" />
                                                 </svg>
                                             </i>
-                                        </button>
+                                        </a>-->
+                                        <div id="paypal-button-container"></div>
                                     </div>
                                 </form>
                             </div>
+                             <!-- Modal -->
+                             <div class="modal fade" id="paypalModal" tabindex="-1" role="dialog"
+                             aria-labelledby="paypalModalLabel" aria-hidden="true">
+                             <div class="modal-dialog" role="document">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="paypalModalLabel">Informe de la transacción</h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <p id="paypalMessage"></p>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-secondary"
+                                             data-dismiss="modal">Cerrar</button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!--====== End Place Details Section ======-->
+    </section>
+    <!--====== End Place Details Section ======-->
 
     <!--====== Start Gallery Section ======-->
     <section class="k-c-gallery gallery-section mbm-150">
@@ -389,7 +420,8 @@
                 </div>
             </div>
         </div>
-    </section><!--====== End Gallery Section ======-->
+    </section>
+    <!--====== End Gallery Section ======-->
     <!--====== Start Footer ======-->
     <footer class="k-c-footer main-footer pt-230">
         <div class="container">
@@ -535,7 +567,8 @@
                 </div>
             </div>
         </div>
-    </footer><!--====== End Footer ======-->
+    </footer>
+    <!--====== End Footer ======-->
     <!--====== Back To Top  ======-->
     <a href="#" class="k-c-btn-top back-to-top"><i class="far fa-angle-up"></i></a>
     <!--====== Jquery js ======-->
@@ -561,6 +594,8 @@
     <!--====== Main js ======-->
     <script src="assets/js/theme.js"></script>
     <script type="text/javascript" src="assets/js/js_backoffice/application.js"></script>
+    <script
+        src="https://sandbox.paypal.com/sdk/js?client-id=AdI6zY6E4wpmgjZYRnZ1oE5LW8f2RmTC4nlYp5ssrGUm9BSGtwuXVuadZMTC4X7tgHLUrvoKEX8xZnrp"></script>
     <script src="assets/js/js_backoffice/course.js"></script>
     <script>
         let params = new URLSearchParams(document.location.search);
