@@ -112,13 +112,16 @@ function update()
 
     $serviceManager = new Course();
     $service_data[0] = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $service_data[1] = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
-    $service_data[2] = filter_input(INPUT_POST, 'subtitulo', FILTER_SANITIZE_STRING);
-    $service_data[3] = filter_input(INPUT_POST, 'imagen', FILTER_SANITIZE_STRING);
-    $service_data[4] = filter_input(INPUT_POST, 'texto_boton', FILTER_SANITIZE_STRING);
-    $service_data[5] = filter_input(INPUT_POST, 'url_boton', FILTER_SANITIZE_STRING);
+    $service_data[1] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
+    $service_data[2] = filter_input(INPUT_POST, 'descripcion');
+    $service_data[3] = filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
+    $service_data[4] = filter_input(INPUT_POST, 'currency', FILTER_SANITIZE_STRING);
+    $service_data[5] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
+    $service_data[6] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
+    $service_data[7] = filter_input(INPUT_POST, 'ubicacion', FILTER_SANITIZE_STRING);
+    $service_data[8] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
 
-    $qres = $serviceManager->updateToolsById($service_data);
+    $qres = $serviceManager->updateCourseById($service_data);
 
     $response = array();
     if ($qres) {
@@ -147,12 +150,13 @@ function create()
     $serviceManager = new Course();
     $messaje = array();
     $service_data[0] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-    $service_data[1] = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
+    $service_data[1] = filter_input(INPUT_POST, 'descripcion');
     $service_data[2] = filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $service_data[3] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
-    $service_data[4] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
-    $service_data[5] = filter_input(INPUT_POST, 'ubicacion', FILTER_SANITIZE_STRING);
-    $service_data[6] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[3] = filter_input(INPUT_POST, 'currency', FILTER_SANITIZE_STRING);
+    $service_data[4] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
+    $service_data[5] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
+    $service_data[6] = filter_input(INPUT_POST, 'ubicacion', FILTER_SANITIZE_STRING);
+    $service_data[7] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
     $qres = $serviceManager->createCourse($service_data);
 
     $response = array();

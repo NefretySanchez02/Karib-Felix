@@ -72,7 +72,7 @@
 
           </div>
 
-          <div id="delete-tools" class="modal" tabindex="-1" role="dialog">
+          <div id="delete-course" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -82,7 +82,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>¿Desea eliminar el curso <span id="item-tools-name"></span>?</p>
+                  <p>¿Desea eliminar el curso <span id="item-course-name"></span>?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" onclick="courseUIManager.removeItem()">Aceptar</button>
@@ -92,7 +92,7 @@
               </div>
             </div>
           </div>
-          <div id="view-tools" class="modal" tabindex="-1" role="dialog">
+          <div id="view-course" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -103,19 +103,25 @@
                 </div>
                 <div class="modal-body">
                   <label class="d-block">
-                    <strong class="text-info">Titulo:</strong> <span id="item-title"></span>
+                    <strong class="text-info">Nombre:</strong> <span id="item-name"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Subtitulo:</strong> <span id="item-subtitle"></span>
+                    <strong class="text-info">Descripción:</strong> <span id="item-description"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Imagen:</strong> <span id="item-img"></span>
+                    <strong class="text-info">Precio:</strong> <span id="item-price"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Url Boton Banner:</strong> <span id="item-urlBtn" style="word-break: break-all;"></span>
+                    <strong class="text-info">Duración:</strong> <span id="item-duration" ></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Texto Boton Banner:</strong> <span id="item-txtBtn"></span>
+                    <strong class="text-info">Nivel:</strong> <span id="item-level" ></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Ubicación:</strong> <span id="item-ubication"></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Ficha:</strong> <span id="item-sheet"></span>
                   </label>
                 </div>
                 <div class="modal-footer">
@@ -137,40 +143,59 @@
                 <div class="modal-body">
                   <form class="mb-4" method="post" action="javascript:void(0);" enctype="multipart/form-data">
                     <div class="row">
-                      <input id="idTools" type="text" class="d-none" />
+                      <input id="idCourse" type="text" class="d-none" />
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Titulo:</strong></label>
-                          <input id="editTitle" type="text" class="form-control px-2" name="titleEdit">
+                          <label class="text-info"><strong>Nombre:</strong></label>
+                          <input id="editName" type="text" class="form-control px-2" name="titleEdit">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Subtitulo:</strong></label>
-                          <input id="editSubtitle" type="text" class="form-control px-2" name="subtitleEdit">
+                          <label class="text-info"><strong>Descripción:</strong></label>
+                          <div id="editDescription"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Precio:</strong></label>
+                          <input id="editPrice" type="text" class="form-control px-2" name="txtBtnEdit">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Moneda:</strong></label>
+                          <input id="editCurrency" type="text" class="form-control px-2" name="txtBtnEdit">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Duración:</strong></label>
+                          <input id="editDuration" type="text" class="form-control px-2" name="urlBtnEdit">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Nivel:</strong></label>
+                          <input id="editLevel" type="text" class="form-control px-2" name="urlBtnEdit">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Ubicación:</strong></label>
+                          <input id="editUbication" type="text" class="form-control px-2" name="urlBtnEdit">
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group form-file-upload form-file-simple">
-                          <label class="text-info"><strong>Imagen Principal:</strong></label>
-                          <input id="editImg-name" type="text" class="form-control inputFileVisible">
-                          <input id="editImg-file" type="file" class="inputFileHidden" accept="image/png, image/jpg, image/jpeg">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Texto Boton:</strong></label>
-                          <input id="editTxtBtn" type="text" class="form-control px-2" name="txtBtnEdit">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Url Boton:</strong></label>
-                          <input id="editUrlBtn" type="text" class="form-control px-2" name="urlBtnEdit">
+                          <label class="text-info"><strong>Ficha:</strong></label>
+                          <input id="editSheet-name" type="text" class="form-control inputFileVisible">
+                          <input id="editSheet-file" type="file" class="inputFileHidden"
+                            accept=".pdf" required>
                         </div>
                       </div>
                       <div id="submit-button" class="col-12">
-                        <button class="btn btn-info" type="buttom" onclick="courseUIManager.updateNews()">
+                        <button class="btn btn-info" type="buttom" onclick="courseUIManager.updateCourse()">
                           <span>Editar</span>
                         </button>
                       </div>
@@ -212,6 +237,12 @@
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Precio:</strong></label>
                           <input id="createPrice" type="text" class="form-control px-2" name="price" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Moneda:</strong></label>
+                          <input id="createCurrency" type="text" class="form-control px-2" name="price" required>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -308,6 +339,9 @@
   <script>
     messagesClient.init();
     var quill = new Quill("#createDescription", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editDescription", {
       theme: "snow",
     });
   </script>

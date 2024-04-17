@@ -176,7 +176,7 @@ function create()
     $serviceManager = new Excursion();
     $messaje = array();
     $service_data[0] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-    $service_data[1] = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
+    $service_data[1] = filter_input(INPUT_POST, 'descripcion');
     $service_data[2] = filter_input(INPUT_POST, 'tip', FILTER_SANITIZE_STRING);
     $service_data[3] = filter_input(INPUT_POST, 'img_tip', FILTER_SANITIZE_STRING);
     $service_data[4] = filter_input(INPUT_POST, 'p_encuentro', FILTER_SANITIZE_STRING);
