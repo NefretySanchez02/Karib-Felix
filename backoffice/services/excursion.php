@@ -1,6 +1,6 @@
 <?php
 
-require_once 'security.php';
+//require_once 'security.php';
 
 use App\Core\CRUD\Excursion;
 use App\Core\Box\Tools;

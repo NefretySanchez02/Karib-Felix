@@ -1,12 +1,12 @@
 <?php
-    session_name('SLAZAR0APP');
+    session_name('Clu5TerM2021');
     session_start();
 
     if(!isset($_SESSION['app-id']) || !isset($_SESSION['user-id'])){
         die('{"success": 0, "error": "Usuario no autenticado"}');
     }
 
-    if($_SESSION['app-id'] != 'SANLAZARO'){
+    if($_SESSION['app-id'] != 'Clu5TerM2021'){
         die('{"success": 0, "error": "Usuario no autenticado"}');
     }
 
