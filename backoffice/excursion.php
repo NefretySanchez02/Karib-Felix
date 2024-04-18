@@ -72,7 +72,7 @@ session_control();
 
           </div>
 
-          <div id="delete-services" class="modal" tabindex="-1" role="dialog">
+          <div id="delete-excursion" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -82,7 +82,7 @@ session_control();
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>¿Desea eliminar el Excursion <span id="item-services-name"></span>?</p>
+                  <p>¿Desea eliminar el Excursion <span id="item-course-name"></span>?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" onclick="excursionUIManager.removeItem()">Aceptar</button>
@@ -92,7 +92,7 @@ session_control();
               </div>
             </div>
           </div>
-          <div id="view-services" class="modal" tabindex="-1" role="dialog">
+          <div id="view-excursion" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -103,28 +103,52 @@ session_control();
                 </div>
                 <div class="modal-body">
                   <label class="d-block">
-                    <strong class="text-info">Titulo:</strong> <span id="item-title"></span>
+                    <strong class="text-info">Nombre:</strong> <span id="item-name"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Subtitulo Banner:</strong> <span id="item-subtitle"></span>
+                    <strong class="text-info">Descripción:</strong> <span id="item-description"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Titulo Banner:</strong> <span id="item-titleB"></span>
+                    <strong class="text-info">Tip:</strong> <span id="item-tip"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Texto Banner:</strong> <span id="item-txt"></span>
+                    <strong class="text-info">Imagen Tip:</strong> <span id="item-imgTip"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Url Boton Banner:</strong> <span id="item-urlBtn" style="word-break: break-all;"></span>
+                    <strong class="text-info">Punto de Encuentro:</strong> <span id="item-meetPoint"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Texto Boton Banner:</strong> <span id="item-txtBtn"></span>
+                    <strong class="text-info">Incluye:</strong> <span id="item-include"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Imagen Principal:</strong> <span id="item-img"></span>
+                    <strong class="text-info">Que llevar:</strong> <span id="item-checklist"></span>
                   </label>
                   <label class="d-block">
-                    <strong class="text-info">Imagen Trasera:</strong> <span id="item-imgT"></span>
+                    <strong class="text-info">Itinerario:</strong> <span id="item-itinerary"></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Precio:</strong> <span id="item-price"></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Duración:</strong> <span id="item-duration" ></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Nivel:</strong> <span id="item-level" ></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Minimo de Personas:</strong> <span id="item-people" ></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Edad:</strong> <span id="item-age" ></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Ubicación:</strong> <span id="item-ubication"></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Idioma:</strong> <span id="item-language"></span>
+                  </label>
+                  <label class="d-block">
+                    <strong class="text-info">Ficha:</strong> <span id="item-sheet"></span>
                   </label>
                 </div>
                 <div class="modal-footer">
@@ -134,7 +158,7 @@ session_control();
               </div>
             </div>
           </div>
-          <div id="services-detail" class="modal" tabindex="-1" role="dialog">
+          <div id="excursion-detail" class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -146,56 +170,111 @@ session_control();
                 <div class="modal-body">
                   <form class="mb-4" method="post" action="javascript:void(0);" enctype="multipart/form-data">
                     <div class="row">
-                      <input id="idService" type="text" class="d-none" />
+                      <input id="idCourse" type="text" class="d-none" />
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Titulo:</strong></label>
-                          <input id="editTitle" type="text" class="form-control px-2" name="titleEdit">
+                          <label class="text-info"><strong>Nombre:</strong></label>
+                          <input id="editName" type="text" class="form-control px-2" name="name" required>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Subtitulo Banner:</strong></label>
-                          <input id="editSubtitle" type="text" class="form-control px-2" name="subtitleEdit">
+                          <label class="text-info"><strong>Descripción:</strong></label>
+                          <div id="editDescription"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Titulo Banner:</strong></label>
-                          <input id="editTitleB" type="text" class="form-control px-2" name="titleBEdit">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Parrafo Banner:</strong></label>
-                          <div id="editText"></div>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Texto Boton:</strong></label>
-                          <input id="editTxtBtn" type="text" class="form-control px-2" name="txtBtnEdit">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group bmd-form-group">
-                          <label class="text-info"><strong>Url Boton:</strong></label>
-                          <input id="editUrlBtn" type="text" class="form-control px-2" name="urlBtnEdit">
+                          <label class="text-info"><strong>Tips:</strong></label>
+                          <div id="editTip"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group form-file-upload form-file-simple">
-                          <label class="text-info"><strong>Imagen Principal:</strong></label>
+                          <label class="text-info"><strong>Imagen Tips:</strong></label>
                           <input id="editImg-name" type="text" class="form-control inputFileVisible">
-                          <input id="editImg-file" type="file" class="inputFileHidden" accept="image/png, image/jpg, image/jpeg">
+                          <input id="editImg-file" type="file" class="inputFileHidden"
+                            accept="image/png, image/jpg, image/jpeg" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Punto de Encuentro:</strong></label>
+                          <input id="editMeetPoint" type="text" class="form-control px-2" name="meetPoint" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Incluye:</strong></label>
+                          <div id="editInclude"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Que llevar:</strong></label>
+                          <div id="editChecklist"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Itinerario:</strong></label>
+                          <div id="editItinerary"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Precio:</strong></label>
+                          <input id="editPrice" type="text" class="form-control px-2" name="price" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Moneda:</strong></label>
+                          <input id="editCurrency" type="text" class="form-control px-2" name="price" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Duración:</strong></label>
+                          <input id="editDuration" type="text" class="form-control px-2" name="duration" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Nivel:</strong></label>
+                          <input id="editLevel" type="text" class="form-control px-2" name="level" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Minimo de Personas:</strong></label>
+                          <input id="editPeople" type="number" class="form-control px-2" name="people" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Edad:</strong></label>
+                          <input id="editAge" type="text" class="form-control px-2" name="age" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Idioma:</strong></label>
+                          <input id="editLanguage" type="text" class="form-control px-2" name="language" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Ubicación:</strong></label>
+                          <input id="editLocation" type="text" class="form-control px-2" name="location" required>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group bmd-form-group form-file-upload form-file-simple">
-                          <label class="text-info"><strong>Imagen Trasera:</strong></label>
-                          <input id="editImgT-name" type="text" class="form-control inputFileVisible">
-                          <input id="editImgT-file" type="file" class="inputFileHidden"
-                            accept="image/png, image/jpg, image/jpeg">
+                          <label class="text-info"><strong>Ficha:</strong></label>
+                          <input id="editSheet-name" type="text" class="form-control inputFileVisible">
+                          <input id="editSheet-file" type="file" class="inputFileHidden"
+                            accept=".pdf" required>
                         </div>
                       </div>
                       <div id="submit-button" class="col-12">
@@ -279,6 +358,12 @@ session_control();
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Precio:</strong></label>
                           <input id="createPrice" type="text" class="form-control px-2" name="price" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="text-info"><strong>Moneda:</strong></label>
+                          <input id="createCurrency" type="text" class="form-control px-2" name="price" required>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -405,6 +490,21 @@ session_control();
       theme: "snow",
     });
     var quill = new Quill("#createItinerary", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editDescription", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editTip", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editInclude", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editChecklist", {
+      theme: "snow",
+    });
+    var quill = new Quill("#editItinerary", {
       theme: "snow",
     });
   </script>

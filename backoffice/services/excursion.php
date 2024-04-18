@@ -138,14 +138,23 @@ function update()
 
     $serviceManager = new Excursion();
     $service_data[0] = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $service_data[1] = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
-    $service_data[2] = filter_input(INPUT_POST, 'subtitulo_banner', FILTER_SANITIZE_STRING);
-    $service_data[3] = filter_input(INPUT_POST, 'titulo_banner', FILTER_SANITIZE_STRING);
-    $service_data[4] = filter_input(INPUT_POST, 'parrafo_banner', FILTER_SANITIZE_STRING);
-    $service_data[5] = filter_input(INPUT_POST, 'texto_boton', FILTER_SANITIZE_STRING);
-    $service_data[6] = filter_input(INPUT_POST, 'url_boton', FILTER_SANITIZE_STRING);
-    $service_data[7] = filter_input(INPUT_POST, 'imagen_1', FILTER_SANITIZE_STRING);
-    $service_data[8] = filter_input(INPUT_POST, 'imagen_2', FILTER_SANITIZE_STRING);
+    $service_data[1] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
+    $service_data[2] = filter_input(INPUT_POST, 'descripcion');
+    $service_data[3] = filter_input(INPUT_POST, 'tip');
+    $service_data[4] = filter_input(INPUT_POST, 'img_tip', FILTER_SANITIZE_STRING);
+    $service_data[5] = filter_input(INPUT_POST, 'p_encuentro', FILTER_SANITIZE_STRING);
+    $service_data[6] = filter_input(INPUT_POST, 'equipos');
+    $service_data[7] = filter_input(INPUT_POST, 'checklist');
+    $service_data[8] = filter_input(INPUT_POST, 'itinerario');
+    $service_data[9] = filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
+    $service_data[10] = filter_input(INPUT_POST, 'currency', FILTER_SANITIZE_STRING);
+    $service_data[11] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
+    $service_data[12] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
+    $service_data[13] = filter_input(INPUT_POST, 'min_persona', FILTER_SANITIZE_STRING);
+    $service_data[14] = filter_input(INPUT_POST, 'edad', FILTER_SANITIZE_STRING);
+    $service_data[15] = filter_input(INPUT_POST, 'lugar', FILTER_SANITIZE_STRING);
+    $service_data[16] = filter_input(INPUT_POST, 'idioma', FILTER_SANITIZE_STRING);
+    $service_data[17] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
 
     $qres = $serviceManager->updateExcursionById($service_data);
 
@@ -177,20 +186,21 @@ function create()
     $messaje = array();
     $service_data[0] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $service_data[1] = filter_input(INPUT_POST, 'descripcion');
-    $service_data[2] = filter_input(INPUT_POST, 'tip', FILTER_SANITIZE_STRING);
+    $service_data[2] = filter_input(INPUT_POST, 'tip');
     $service_data[3] = filter_input(INPUT_POST, 'img_tip', FILTER_SANITIZE_STRING);
     $service_data[4] = filter_input(INPUT_POST, 'p_encuentro', FILTER_SANITIZE_STRING);
-    $service_data[5] = filter_input(INPUT_POST, 'equipos', FILTER_SANITIZE_STRING);
-    $service_data[6] = filter_input(INPUT_POST, 'checklist', FILTER_SANITIZE_STRING);
-    $service_data[7] = filter_input(INPUT_POST, 'itinerario', FILTER_SANITIZE_STRING);
+    $service_data[5] = filter_input(INPUT_POST, 'equipos');
+    $service_data[6] = filter_input(INPUT_POST, 'checklist');
+    $service_data[7] = filter_input(INPUT_POST, 'itinerario');
     $service_data[8] = filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $service_data[9] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
-    $service_data[10] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
-    $service_data[11] = filter_input(INPUT_POST, 'min_persona', FILTER_SANITIZE_STRING);
-    $service_data[12] = filter_input(INPUT_POST, 'edad', FILTER_SANITIZE_STRING);
-    $service_data[13] = filter_input(INPUT_POST, 'lugar', FILTER_SANITIZE_STRING);
-    $service_data[14] = filter_input(INPUT_POST, 'idioma', FILTER_SANITIZE_STRING);
-    $service_data[15] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[9] = filter_input(INPUT_POST, 'currency', FILTER_SANITIZE_STRING);
+    $service_data[10] = filter_input(INPUT_POST, 'duracion', FILTER_SANITIZE_STRING);
+    $service_data[11] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
+    $service_data[12] = filter_input(INPUT_POST, 'min_persona', FILTER_SANITIZE_STRING);
+    $service_data[13] = filter_input(INPUT_POST, 'edad', FILTER_SANITIZE_STRING);
+    $service_data[14] = filter_input(INPUT_POST, 'lugar', FILTER_SANITIZE_STRING);
+    $service_data[15] = filter_input(INPUT_POST, 'idioma', FILTER_SANITIZE_STRING);
+    $service_data[16] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
     $qres = $serviceManager->createExcursion($service_data);
 
     $response = array();

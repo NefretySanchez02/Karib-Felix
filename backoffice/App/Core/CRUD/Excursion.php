@@ -82,17 +82,29 @@ class Excursion extends Model
         return $sql;
     }
 
-    public static function updateToolsById($datap)
+    public static function updateExcursionById($datap)
     {
         $fields_array = array(
             // array( array("field" => FIELD-NAME, "value" => FIELD-VALUE, "type" => ["INT" | "STR"] ) )
             array("field" => "id", "value" => $datap[0], "type" => "INT"),
             //Send the table id field in the first array position
-            array("field" => "titulo", "value" => $datap[1], "type" => "STR"),
-            array("field" => "subtitulo", "value" => $datap[2], "type" => "STR"),
-            array("field" => "imagen", "value" => $datap[3], "type" => "STR"),
-            array("field" => "texto_boton", "value" => $datap[4], "type" => "STR"),
-            array("field" => "url_boton", "value" => $datap[5], "type" => "STR")
+            array("field" => "nombre", "value" => $datap[1], "type" => "STR"),
+            array("field" => "descripcion", "value" => $datap[2], "type" => "STR"),
+            array("field" => "tip", "value" => $datap[3], "type" => "STR"),
+            array("field" => "img_tip", "value" => $datap[4], "type" => "STR"),
+            array("field" => "p_encuentro", "value" => $datap[5], "type" => "STR"),
+            array("field" => "equipos", "value" => $datap[6], "type" => "STR"),
+            array("field" => "checklist", "value" => $datap[7], "type" => "STR"),
+            array("field" => "itinerario", "value" => $datap[8], "type" => "STR"),
+            array("field" => "precio", "value" => $datap[9], "type" => "STR"),
+            array("field" => "currency", "value" => $datap[10], "type" => "STR"),
+            array("field" => "duracion", "value" => $datap[11], "type" => "STR"),
+            array("field" => "nivel", "value" => $datap[12], "type" => "STR"),
+            array("field" => "min_persona", "value" => $datap[13], "type" => "STR"),
+            array("field" => "edad", "value" => $datap[14], "type" => "STR"),
+            array("field" => "lugar", "value" => $datap[15], "type" => "STR"),
+            array("field" => "idioma", "value" => $datap[16], "type" => "STR"),
+            array("field" => "ficha", "value" => $datap[17], "type" => "STR")
         );
         $sql = parent::generateUpdateQuery(self::SQL_TABLE, $fields_array);
         $params = array(
@@ -114,13 +126,14 @@ class Excursion extends Model
             array("field" => "checklist", "value" => $data[6], "type" => "STR"),
             array("field" => "itinerario", "value" => $data[7], "type" => "STR"),
             array("field" => "precio", "value" => $data[8], "type" => "STR"),
-            array("field" => "duracion", "value" => $data[9], "type" => "STR"),
-            array("field" => "nivel", "value" => $data[10], "type" => "STR"),
-            array("field" => "min_persona", "value" => $data[11], "type" => "STR"),
-            array("field" => "edad", "value" => $data[12], "type" => "STR"),
-            array("field" => "lugar", "value" => $data[13], "type" => "STR"),
-            array("field" => "idioma", "value" => $data[14], "type" => "STR"),
-            array("field" => "ficha", "value" => $data[15], "type" => "STR")
+            array("field" => "currency", "value" => $data[9], "type" => "STR"),
+            array("field" => "duracion", "value" => $data[10], "type" => "STR"),
+            array("field" => "nivel", "value" => $data[11], "type" => "STR"),
+            array("field" => "min_persona", "value" => $data[12], "type" => "STR"),
+            array("field" => "edad", "value" => $data[13], "type" => "STR"),
+            array("field" => "lugar", "value" => $data[14], "type" => "STR"),
+            array("field" => "idioma", "value" => $data[15], "type" => "STR"),
+            array("field" => "ficha", "value" => $data[16], "type" => "STR")
         );
         $sql = parent::generateInsertQuery(self::SQL_TABLE, $fields_array);
         $affected_arrows = parent::executeQuery($sql, false);

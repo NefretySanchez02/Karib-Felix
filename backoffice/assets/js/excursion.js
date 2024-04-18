@@ -189,7 +189,7 @@ var messagesClient = {
         foto: name,
       },
     }).done(function (msg) {
-      console.log(msg)
+      console.log(msg);
       alert("Fotos Eliminada del sistema");
       //window.location.reload();
     });
@@ -268,24 +268,43 @@ var excursionUIManager = {
     }
 
     messagesClient.get(id, function (data) {
-      var inputID = $("#idService");
+      var inputID = $("#idCourse");
       inputID.val(data.id);
-      var inputTitular = $("#editTitle");
-      inputTitular.val(data.titulo);
-      var inputSubtitle = $("#editSubtitle");
-      inputSubtitle.val(data.subtitulo_banner);
-      var inputTitle = $("#editTitleB");
-      inputTitle.val(data.titulo_banner);
-      quill.clipboard.dangerouslyPasteHTML(0, data.parrafo_banner);
-      var inputUrlBtn = $("#editTxtBtn");
-      inputUrlBtn.val(data.texto_boton);
-      var inputTxtBtn = $("#editUrlBtn");
-      inputTxtBtn.val(data.url_boton);
-      var inputImg = $("#editImg-name");
-      inputImg.val(data.imagen_1);
-      var inputImgT = $("#editImgT-name");
-      inputImgT.val(data.imagen_2);
-      document.getElementById("services-detail").classList.add("d-block");
+      var inputName = $("#editName");
+      inputName.val(data.nombre);
+      document.querySelector("#editDescription .ql-editor").innerHTML =
+        data.descripcion;
+      document.querySelector("#editTip .ql-editor").innerHTML = data.tip;
+      var inputImgTip = $("#editImg-name");
+      inputImgTip.val(data.img_tip);
+      var inputMeetPoint = $("#editMeetPoint");
+      inputMeetPoint.val(data.p_encuentro);
+      document.querySelector("#editInclude .ql-editor").innerHTML =
+        data.equipos;
+      document.querySelector("#editChecklist .ql-editor").innerHTML =
+        data.checklist;
+      document.querySelector("#editItinerary .ql-editor").innerHTML =
+        data.itinerario;
+      var inputPrice = $("#editPrice");
+      inputPrice.val(data.precio);
+      var inputCurrency = $("#editCurrency");
+      inputCurrency.val(data.currency);
+      var inputDuration = $("#editDuration");
+      inputDuration.val(data.duracion);
+      var inputLevel = $("#editLevel");
+      inputLevel.val(data.nivel);
+      var inputPeople = $("#editPeople");
+      inputPeople.val(data.min_persona);
+      var inputAge = $("#editAge");
+      inputAge.val(data.edad);
+      var inputLanguahe = $("#editLanguage");
+      inputLanguahe.val(data.idioma);
+      var inputUbication = $("#editLocation");
+      inputUbication.val(data.lugar);
+      var inputSheet = $("#editSheet-name");
+      inputSheet.val(data.ficha);
+
+      document.getElementById("excursion-detail").classList.add("d-block");
     });
   },
 
@@ -294,18 +313,18 @@ var excursionUIManager = {
       return false;
     }
 
-    document.getElementById("item-services-name").innerText = name;
-    document.getElementById("delete-services").classList.add("d-block");
-    localStorage.setItem("id_services", id);
+    document.getElementById("item-course-name").innerText = name;
+    document.getElementById("delete-excursion").classList.add("d-block");
+    localStorage.setItem("id-excursion", id);
   },
 
   removeItem: function () {
-    if (!localStorage.getItem("id_services")) {
+    if (!localStorage.getItem("id-excursion")) {
       return false;
     }
-    let id_services = localStorage.getItem("id_services");
+    let id_services = localStorage.getItem("id-excursion");
     messagesClient.deleteNews(id_services);
-    document.getElementById("delete-services").classList.remove("d-block");
+    document.getElementById("delete-excursion").classList.remove("d-block");
     window.location.reload();
   },
 
@@ -315,24 +334,40 @@ var excursionUIManager = {
     }
 
     messagesClient.get(id, function (data) {
-      var inputTitular = $("#item-title");
-      inputTitular[0].innerText = data.titulo;
-      var inputSubtitle = $("#item-subtitle");
-      inputSubtitle[0].innerText = data.subtitulo_banner;
-      var inputTitle = $("#item-titleB");
-      inputTitle[0].innerText = data.titulo_banner;
-      var inputTxt = $("#item-txt");
-      inputTxt[0].innerText = data.parrafo_banner;
-      var inputUrlBtn = $("#item-urlBtn");
-      inputUrlBtn[0].innerText = data.url_boton;
-      var inputTxtBtn = $("#item-txtBtn");
-      inputTxtBtn[0].innerText = data.texto_boton;
-      var inputImg = $("#item-img");
-      inputImg[0].innerHTML = ` <img src='assets/img/services/${data.imagen_1}' style="width: 30%;" />`;
-      var inputImgT = $("#item-imgT");
-      inputImgT[0].innerHTML = ` <img src='assets/img/services/${data.imagen_2}' style="width: 30%;" />`;
+      var inputName = $("#item-name");
+      inputName[0].innerText = data.nombre;
+      var inputDescription = $("#item-description");
+      inputDescription[0].innerHTML = data.descripcion;
+      var inputTip = $("#item-tip");
+      inputTip[0].innerHTML = data.tip;
+      var inputImgTip = $("#item-imgTip");
+      inputImgTip[0].innerHTML = ` <img src='assets/img/excursion/${data.img_tip}'  style="width: 200px;"/>`;
+      var inputMeetPoint = $("#item-meetPoint");
+      inputMeetPoint[0].innerHTML = data.p_encuentro;
+      var inputInclude = $("#item-include");
+      inputInclude[0].innerHTML = data.equipos;
+      var inputCheck = $("#item-checklist");
+      inputCheck[0].innerHTML = data.checklist;
+      var inputItinerary = $("#item-itinerary");
+      inputItinerary[0].innerHTML = data.itinerario;
+      var inputPrice = $("#item-price");
+      inputPrice[0].innerText = data.precio + data.currency;
+      var inputDuration = $("#item-duration");
+      inputDuration[0].innerText = data.duracion;
+      var inputLevel = $("#item-level");
+      inputLevel[0].innerText = data.nivel;
+      var inputPeople = $("#item-people");
+      inputPeople[0].innerText = data.min_persona;
+      var inputAge = $("#item-age");
+      inputAge[0].innerText = data.edad;
+      var inputUbication = $("#item-ubication");
+      inputUbication[0].innerText = data.lugar;
+      var inputLanguage = $("#item-language");
+      inputLanguage[0].innerText = data.idioma;
+      var inputSheet = $("#item-sheet");
+      inputSheet[0].innerHTML = ` <a href='assets/files/course/${data.ficha}' target="_blank" />${data.ficha}</a>`;
 
-      document.getElementById("view-services").classList.add("d-block");
+      document.getElementById("view-excursion").classList.add("d-block");
     });
   },
 
@@ -340,16 +375,21 @@ var excursionUIManager = {
    * Guarda los cambios del modo edicion en la bd y devueve el elemento al modo solo lectura
    */
   hideItemDetailModal: function (id) {
-    document.getElementById("delete-services").classList.remove("d-block");
+    document.getElementById("delete-excursion").classList.remove("d-block");
   },
   hideItemUpdateModal: function (id) {
-    document.getElementById("services-detail").classList.remove("d-block");
+    document.getElementById("excursion-detail").classList.remove("d-block");
+    document.querySelector("#editDescription .ql-editor").innerHTML = "";
+    document.querySelector("#editTip .ql-editor").innerHTML = "";
+    document.querySelector("#editInclude .ql-editor").innerHTML = "";
+    document.querySelector("#editChecklist .ql-editor").innerHTML = "";
+    document.querySelector("#editItinerary .ql-editor").innerHTML = "";
   },
   hideItemCreateModal: function (id) {
     document.getElementById("create-excursion").classList.remove("d-block");
   },
   hideItemViewModal: function (id) {
-    document.getElementById("view-services").classList.remove("d-block");
+    document.getElementById("view-excursion").classList.remove("d-block");
   },
   hideImgModal: function () {
     document.getElementById("view-imgExcursion").classList.remove("d-block");
@@ -358,57 +398,85 @@ var excursionUIManager = {
 
   updateNews: function () {
     if (
-      document.getElementById("editTitle").value.trim().length === 0 ||
-      document.getElementById("editSubtitle").value.trim().length === 0 ||
-      document.getElementById("editTitleB").value.trim().length === 0 ||
-      document.querySelector("#editText .ql-editor").getInnerHTML().length ===
+      document.getElementById("editName").value.trim().length === 0 ||
+      document.querySelector("#editDescription .ql-editor").getInnerHTML()
+        .length === 0 ||
+      document.querySelector("#editTip .ql-editor").getInnerHTML().length ===
         0 ||
-      document.getElementById("editTxtBtn").value.trim().length === 0 ||
-      document.getElementById("editUrlBtn").value.trim().length === 0 ||
       document.getElementById("editImg-name").value.trim().length === 0 ||
-      document.getElementById("editImgT-name").value.trim().length === 0
+      document.getElementById("editMeetPoint").value.trim().length === 0 ||
+      document.querySelector("#editInclude .ql-editor").getInnerHTML()
+        .length === 0 ||
+      document.querySelector("#editChecklist .ql-editor").getInnerHTML()
+        .length === 0 ||
+      document.querySelector("#editItinerary .ql-editor").getInnerHTML()
+        .length === 0 ||
+      document.getElementById("editPrice").value.trim().length === 0 ||
+      document.getElementById("editCurrency").value.trim().length === 0 ||
+      document.getElementById("editDuration").value.trim().length === 0 ||
+      document.getElementById("editLevel").value.trim().length === 0 ||
+      document.getElementById("editPeople").value.trim().length === 0 ||
+      document.getElementById("editAge").value.trim().length === 0 ||
+      document.getElementById("editLanguage").value.trim().length === 0 ||
+      document.getElementById("editLocation").value.trim().length === 0 ||
+      document.getElementById("editSheet-name").value.trim().length === 0
     ) {
       alert("Debes completar los campos para continuar");
       return false;
     }
     let dataset = {
-      id: document.getElementById("idService").value,
-      title: document.getElementById("editTitle").value,
-      subtitle: document.getElementById("editSubtitle").value,
-      titleB: document.getElementById("editTitleB").value,
-      txtB: document.querySelector("#editText .ql-editor").getInnerHTML(),
-      txtBtn: document.getElementById("editTxtBtn").value,
-      urlBtn: document.getElementById("editUrlBtn").value,
-      imgP: document.getElementById("editImg-file").files[0],
-      imgT: document.getElementById("editImgT-file").files[0],
+      id: document.getElementById("idCourse").value,
+      name: document.getElementById("editName").value,
+      description: document
+        .querySelector("#editDescription .ql-editor")
+        .getInnerHTML(),
+      tip: document.querySelector("#editTip .ql-editor").getInnerHTML(),
+      imgTip: document.getElementById("editImg-file").value,
+      meetPoint: document.getElementById("editMeetPoint").value,
+      include: document.querySelector("#editInclude .ql-editor").getInnerHTML(),
+      checklist: document
+        .querySelector("#editChecklist .ql-editor")
+        .getInnerHTML(),
+      itinerary: document
+        .querySelector("#editItinerary .ql-editor")
+        .getInnerHTML(),
+      price: document.getElementById("editPrice").value,
+      currency: document.getElementById("editCurrency").value,
+      duration: document.getElementById("editDuration").value,
+      level: document.getElementById("editLevel").value,
+      people: document.getElementById("editPeople").value,
+      age: document.getElementById("editAge").value,
+      location: document.getElementById("editLocation").value,
+      language: document.getElementById("editLanguage").value,
+      sheet: document.getElementById("editSheet-file").value,
     };
 
-    if (dataset.imgP == undefined) {
-      dataset.imgP = document.getElementById("editImg-name").value;
+    if (dataset.imgTip == "") {
+      dataset.imgTip = document.getElementById("editImg-name").value;
     } else {
-      dataset.imgP = document.getElementById("editImg-file").files[0];
+      dataset.imgTip = document.getElementById("editImg-file").files[0];
     }
 
-    if (dataset.imgT == undefined) {
-      dataset.imgT = document.getElementById("editImgT-name").value;
+    if (dataset.sheet == "") {
+      dataset.sheet = document.getElementById("editSheet-name").value;
     } else {
-      dataset.imgT = document.getElementById("editImgT-file").files[0];
+      dataset.sheet = document.getElementById("editSheet-file").files[0];
     }
 
     var dataImg;
-    var dataImgT;
-    if (typeof dataset.imgP == "object") {
-      dataImg = dataset.imgP.name;
-      messagesClient.updateImgService(dataset.imgP);
+    var dataFile;
+    if (typeof dataset.imgTip == "object") {
+      dataImg = dataset.imgTip.name;
+      messagesClient.updateImgService(dataset.imgTip);
     } else {
-      dataImg = dataset.imgP;
+      dataImg = dataset.imgTip;
     }
 
-    if (typeof dataset.imgT == "object") {
-      dataImgT = dataset.imgT.name;
-      messagesClient.updateImgService(dataImgT);
+    if (typeof dataset.sheet == "object") {
+      dataFile = dataset.sheet.name;
+      messagesClient.updateSheetService(dataset.sheet);
     } else {
-      dataImgT = dataset.imgT;
+      dataFile = dataset.sheet;
     }
 
     $.ajax({
@@ -419,17 +487,26 @@ var excursionUIManager = {
       data: {
         action: "update",
         id: dataset.id,
-        titulo: dataset.title,
-        subtitulo_banner: dataset.subtitle,
-        titulo_banner: dataset.titleB,
-        parrafo_banner: dataset.txtB,
-        texto_boton: dataset.txtBtn,
-        url_boton: dataset.urlBtn,
-        imagen_1: dataImg,
-        imagen_2: dataImgT,
+        nombre: dataset.name,
+        descripcion: dataset.description,
+        tip: dataset.tip,
+        img_tip: dataImg,
+        p_encuentro: dataset.meetPoint,
+        equipos: dataset.include,
+        checklist: dataset.checklist,
+        itinerario: dataset.itinerary,
+        precio: dataset.price,
+        currency: dataset.currency,
+        duracion: dataset.duration,
+        nivel: dataset.level,
+        min_persona: dataset.people,
+        edad: dataset.age,
+        lugar: dataset.location,
+        idioma: dataset.language,
+        ficha: dataFile,
       },
     }).done(function (msg) {
-      alert("Servicio Actualizado");
+      alert("Excursión Actualizado");
       window.location.reload();
     });
   },
@@ -452,6 +529,7 @@ var excursionUIManager = {
       document.querySelector("#createItinerary .ql-editor").getInnerHTML()
         .length === 0 ||
       document.getElementById("createPrice").value.trim().length === 0 ||
+      document.getElementById("createCurrency").value.trim().length === 0 ||
       document.getElementById("createDuration").value.trim().length === 0 ||
       document.getElementById("createLevel").value.trim().length === 0 ||
       document.getElementById("createPeople").value.trim().length === 0 ||
@@ -482,6 +560,7 @@ var excursionUIManager = {
         .querySelector("#createItinerary .ql-editor")
         .getInnerHTML(),
       price: document.getElementById("createPrice").value,
+      currency: document.getElementById("createCurrency").value,
       duration: document.getElementById("createDuration").value,
       level: document.getElementById("createLevel").value,
       people: document.getElementById("createPeople").value,
@@ -504,6 +583,7 @@ var excursionUIManager = {
         checklist: dataset.checklist,
         itinerario: dataset.itinerary,
         precio: dataset.price,
+        currency: dataset.currency,
         duracion: dataset.duration,
         nivel: dataset.level,
         min_persona: dataset.people,
@@ -550,7 +630,7 @@ var excursionUIManager = {
       if (data.length != 0) {
         data.forEach(function (foto) {
           let img = foto.foto;
-          let idImg = foto.id
+          let idImg = foto.id;
           let itemHtml = /*html*/ `  
                 <div>      
                 <img src="assets/img/excursion/${img}" style="width: 45%;"/>
@@ -562,12 +642,11 @@ var excursionUIManager = {
 
           wrapper.innerHTML += itemHtml;
         });
-        
       }
     });
     document.getElementById("view-imgExcursion").classList.add("d-block");
   },
-  modalDeleteImg:function (id,img) {
+  modalDeleteImg: function (id, img) {
     messagesClient.deleteImgs(id, img);
   },
 };
