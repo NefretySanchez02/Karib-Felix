@@ -104,11 +104,12 @@ var courseClientUIManager = {
     let curr = itemData.currency;
     let time = itemData.duracion;
     let level = itemData.nivel;
+    let imagenCourse = itemData.imagen;
 
     let itemHtml = /*html*/ `
                       <div class="single-place-item mb-60 wow fadeInUp">
                           <div class="place-img">
-                              <img src="assets/images/imgKarib/excursiones-2.png" alt="Place Image">
+                              <img src="backoffice/assets/img/course/${imagenCourse}" alt="Place Image">
                           </div>
                           <div class="place-content">
                               <div class="info">

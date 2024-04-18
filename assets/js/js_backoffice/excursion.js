@@ -104,11 +104,12 @@ var excursionClientUIManager = {
     let curr = itemData.currency;
     let time = itemData.duracion;
     let level = itemData.nivel;
+    let imgExcursion = itemData.imagen;
 
     let itemHtml = /*html*/ `
                       <div class="single-place-item mb-60 wow fadeInUp">
                           <div class="place-img">
-                              <img src="assets/images/imgKarib/excursiones-2.png" alt="Place Image">
+                            <img src="backoffice/assets/img/excursion/${imgExcursion}" alt="Place Image">
                           </div>
                           <div class="place-content">
                               <div class="info">
