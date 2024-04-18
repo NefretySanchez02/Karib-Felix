@@ -10,6 +10,10 @@ var excursionClient = {
     excursionClient.list(true);
   },
 
+  listIndexIndex: function(){
+    excursionClient.listIndex();
+  },
+
   /**
    * Obtiene mediante consulta un arreglo con todos los mensajes en BD
    */
@@ -23,6 +27,20 @@ var excursionClient = {
 
       if (data.success == 1) {
         excursionClientUIManager.drawList(data, indexPageFlag);
+      }
+    });
+  },
+
+  listIndex:  function (indexPageFlag = false) {
+    $.ajax({
+      method: "GET",
+      url: application.service_url + "excursion.php",
+      data: { action: "list" },
+    }).done(function (msg) {
+      let data = application.parseJson(msg);
+
+      if (data.success == 1) {
+        excursionClientUIManager.drawListIndex(data, indexPageFlag);
       }
     });
   },
@@ -89,6 +107,25 @@ var excursionClientUIManager = {
     });
   },
 
+  drawListIndex: function (dataset, indexPageFlag = false) {
+    if (!dataset) {
+      return false;
+    }
+
+    let messages = dataset.messages;
+
+    let wrapper = document.getElementById("excursion-index");
+    wrapper.innerHTML = "";
+    messages.forEach(function (msg, index) {
+      if(index>=3){
+        return false;
+      }
+      wrapper.appendChild(
+        excursionClientUIManager.drawItemIndex(msg, index, indexPageFlag)
+      );
+    });
+  },
+
   /**
    * construye elemento noticia listo para integrar al DOM
    */
@@ -135,6 +172,40 @@ var excursionClientUIManager = {
                               </div>
                           </div>
                       </div>
+            `;
+    let div = document.createElement("div");
+    div.setAttribute("class", "col-xl-4 col-md-6 col-sm-12 places-column");
+    div.innerHTML = itemHtml;
+    return div;
+  },
+  drawItemIndex: function (itemData, index, indexPageFlag = false) {
+    if (!itemData) {
+      return false;
+    }
+
+    let id = itemData.id;
+    let name = itemData.nombre;
+    let location = itemData.lugar;
+    let price = itemData.precio;
+    let curr = itemData.currency;
+    let time = itemData.duracion;
+    let level = itemData.nivel;
+    let imgExcursion = itemData.imagen;
+
+    let itemHtml = /*html*/ `
+                    <div class="single-service-item mb-40">
+                    <div class="content">
+                        <h3 class="title">${name}</h3>
+                        <div class="meta">
+                            <span class="icon">${time}</span>
+                            <span class="icon">${level}</span>
+                        </div>
+                        <a href="detalle-excursiones.html?id=${id}" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                    </div>
+                    <div class="img-holder">
+                        <img src="backoffice/assets/img/excursion/${imgExcursion}" alt="Service Image">
+                    </div>
+                    </div>
             `;
     let div = document.createElement("div");
     div.setAttribute("class", "col-xl-4 col-md-6 col-sm-12 places-column");
