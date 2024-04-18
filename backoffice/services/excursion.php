@@ -155,6 +155,7 @@ function update()
     $service_data[15] = filter_input(INPUT_POST, 'lugar', FILTER_SANITIZE_STRING);
     $service_data[16] = filter_input(INPUT_POST, 'idioma', FILTER_SANITIZE_STRING);
     $service_data[17] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[18] = filter_input(INPUT_POST, 'imagen', FILTER_SANITIZE_STRING);
 
     $qres = $serviceManager->updateExcursionById($service_data);
 
@@ -201,6 +202,7 @@ function create()
     $service_data[14] = filter_input(INPUT_POST, 'lugar', FILTER_SANITIZE_STRING);
     $service_data[15] = filter_input(INPUT_POST, 'idioma', FILTER_SANITIZE_STRING);
     $service_data[16] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[17] = filter_input(INPUT_POST, 'imagen', FILTER_SANITIZE_STRING);
     $qres = $serviceManager->createExcursion($service_data);
 
     $response = array();

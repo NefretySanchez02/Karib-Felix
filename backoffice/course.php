@@ -106,6 +106,9 @@
                     <strong class="text-info">Nombre:</strong> <span id="item-name"></span>
                   </label>
                   <label class="d-block">
+                    <strong class="text-info">Imagen Curso:</strong> <span id="item-img"></span>
+                  </label>
+                  <label class="d-block">
                     <strong class="text-info">Descripción:</strong> <span id="item-description"></span>
                   </label>
                   <label class="d-block">
@@ -148,6 +151,14 @@
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Nombre:</strong></label>
                           <input id="editName" type="text" class="form-control px-2" name="titleEdit">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group form-file-upload form-file-simple">
+                          <label class="text-info"><strong>Imagen Curso:</strong></label>
+                          <input id="editImg-name" type="text" class="form-control inputFileVisible">
+                          <input id="editImg-file" type="file" class="inputFileHidden"
+                            accept="image/png, image/jpg, image/jpeg" required>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -225,6 +236,14 @@
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Nombre:</strong></label>
                           <input id="createName" type="text" class="form-control px-2" name="name" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group form-file-upload form-file-simple">
+                          <label class="text-info"><strong>Imagen Curso:</strong></label>
+                          <input id="createImg-name" type="text" class="form-control inputFileVisible">
+                          <input id="createImg-file" type="file" class="inputFileHidden"
+                            accept="image/png, image/jpg, image/jpeg" required>
                         </div>
                       </div>
                       <div class="col-md-12">

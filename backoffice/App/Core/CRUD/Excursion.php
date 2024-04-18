@@ -104,7 +104,8 @@ class Excursion extends Model
             array("field" => "edad", "value" => $datap[14], "type" => "STR"),
             array("field" => "lugar", "value" => $datap[15], "type" => "STR"),
             array("field" => "idioma", "value" => $datap[16], "type" => "STR"),
-            array("field" => "ficha", "value" => $datap[17], "type" => "STR")
+            array("field" => "ficha", "value" => $datap[17], "type" => "STR"),
+            array("field" => "imagen", "value" => $datap[18], "type" => "STR")
         );
         $sql = parent::generateUpdateQuery(self::SQL_TABLE, $fields_array);
         $params = array(
@@ -133,7 +134,8 @@ class Excursion extends Model
             array("field" => "edad", "value" => $data[13], "type" => "STR"),
             array("field" => "lugar", "value" => $data[14], "type" => "STR"),
             array("field" => "idioma", "value" => $data[15], "type" => "STR"),
-            array("field" => "ficha", "value" => $data[16], "type" => "STR")
+            array("field" => "ficha", "value" => $data[16], "type" => "STR"),
+            array("field" => "imagen", "value" => $data[17], "type" => "STR")
         );
         $sql = parent::generateInsertQuery(self::SQL_TABLE, $fields_array);
         $affected_arrows = parent::executeQuery($sql, false);

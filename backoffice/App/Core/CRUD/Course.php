@@ -88,6 +88,7 @@ class Course extends Model
             array("field" => "nivel", "value" => $datap[6], "type" => "STR"),
             array("field" => "ubicacion", "value" => $datap[7], "type" => "STR"),
             array("field" => "ficha", "value" => $datap[8], "type" => "STR"),
+            array("field" => "imagen", "value" => $datap[9], "type" => "STR")
         );
         $sql = parent::generateUpdateQuery(self::SQL_TABLE, $fields_array);
         $params = array(
@@ -107,7 +108,8 @@ class Course extends Model
             array("field" => "duracion", "value" => $data[4], "type" => "STR"),
             array("field" => "nivel", "value" => $data[5], "type" => "STR"),
             array("field" => "ubicacion", "value" => $data[6], "type" => "STR"),
-            array("field" => "ficha", "value" => $data[7], "type" => "STR")
+            array("field" => "ficha", "value" => $data[7], "type" => "STR"),
+            array("field" => "imagen", "value" => $data[8], "type" => "STR")
         );
         $sql = parent::generateInsertQuery(self::SQL_TABLE, $fields_array);
         $affected_arrows = parent::executeQuery($sql, false);

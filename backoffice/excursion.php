@@ -106,6 +106,9 @@ session_control();
                     <strong class="text-info">Nombre:</strong> <span id="item-name"></span>
                   </label>
                   <label class="d-block">
+                    <strong class="text-info">Imagen Excursión:</strong> <span id="item-img"></span>
+                  </label>
+                  <label class="d-block">
                     <strong class="text-info">Descripción:</strong> <span id="item-description"></span>
                   </label>
                   <label class="d-block">
@@ -175,6 +178,14 @@ session_control();
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Nombre:</strong></label>
                           <input id="editName" type="text" class="form-control px-2" name="name" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group form-file-upload form-file-simple">
+                          <label class="text-info"><strong>Imagen Excursion:</strong></label>
+                          <input id="editImgPrin-name" type="text" class="form-control inputFileVisible">
+                          <input id="editImgPrin-file" type="file" class="inputFileHidden"
+                            accept="image/png, image/jpg, image/jpeg" required>
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -308,6 +319,14 @@ session_control();
                         <div class="form-group bmd-form-group">
                           <label class="text-info"><strong>Nombre:</strong></label>
                           <input id="createName" type="text" class="form-control px-2" name="name" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group form-file-upload form-file-simple">
+                          <label class="text-info"><strong>Imagen Excursión:</strong></label>
+                          <input id="createImgPrin-name" type="text" class="form-control inputFileVisible">
+                          <input id="createImgPrin-file" type="file" class="inputFileHidden"
+                            accept="image/png, image/jpg, image/jpeg" required>
                         </div>
                       </div>
                       <div class="col-md-12">

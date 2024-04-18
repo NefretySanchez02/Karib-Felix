@@ -168,6 +168,29 @@ var messagesClient = {
       window.location.reload();
     });
   },
+
+  updateImgCourse: function (foto) {
+    var formData = new FormData();
+    formData.append("image", foto);
+    formData.append("action", "updatePhoto");
+    if (typeof formData.get("image") == "object") {
+      $.ajax({
+        url: application.service_url + "course.php",
+        type: "POST",
+        data: formData,
+        mimeType: "multipart/form-data",
+        dataType: "html",
+        contentType: false,
+        processData: false,
+        success: function (msg, textStatus, jqXHR) {
+          console.log(msg);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {},
+      });
+    }
+
+    /*  */
+  },
 };
 
 /**
@@ -246,6 +269,8 @@ var courseUIManager = {
       inputID.val(data.id);
       var inputName = $("#editName");
       inputName.val(data.nombre);
+      var inputImg = $("#editImg-name");
+      inputImg.val(data.imagen);
       var inputPrice = $("#editPrice");
       inputPrice.val(data.precio);
       var inputCurrency = $("#editCurrency");
@@ -291,6 +316,8 @@ var courseUIManager = {
     messagesClient.get(id, function (data) {
       var inputName = $("#item-name");
       inputName[0].innerText = data.nombre;
+      var inputImg = $("#item-img");
+      inputImg[0].innerHTML =  ` <img src='assets/img/course/${data.imagen}'  style="width: 200px;"/>`;
       var inputDescription = $("#item-description");
       inputDescription[0].innerHTML = data.descripcion;
       var inputPrice = $("#item-price");
@@ -372,7 +399,8 @@ var courseUIManager = {
       document.getElementById("editDuration").value.trim().length === 0 ||
       document.getElementById("editLevel").value.trim().length === 0 ||
       document.getElementById("editUbication").value.trim().length === 0 ||
-      document.getElementById("editSheet-name").value.trim().length === 0
+      document.getElementById("editSheet-name").value.trim().length === 0 ||
+      document.getElementById("editImg-name").value.trim().length === 0
     ) {
       alert("Debes completar los campos para continuar");
       return false;
@@ -389,6 +417,7 @@ var courseUIManager = {
       level: document.getElementById("editLevel").value,
       location: document.getElementById("editUbication").value,
       sheet: document.getElementById("editSheet-file").value,
+      imagen: document.getElementById("editImg-file").value,
     };
 
     if (dataset.sheet== "") {
@@ -397,12 +426,26 @@ var courseUIManager = {
       dataset.sheet = document.getElementById("editSheet-file").files[0];
     }
 
+    if (dataset.imagen== "") {
+      dataset.imagen = document.getElementById("editImg-name").value;
+    } else {
+      dataset.imagen = document.getElementById("editImg-file").files[0];
+    }
+
     var dataImg;
+    var dataImgCourse;
     if (typeof dataset.sheet == "object") {
       dataImg = dataset.sheet.name;
       messagesClient.updateSheetCourse(dataset.sheet);
     } else {
       dataImg = dataset.sheet;
+    }
+
+    if (typeof dataset.imagen == "object") {
+      dataImgCourse = dataset.imagen.name;
+      messagesClient.updateImgCourse(dataset.imagen);
+    } else {
+      dataImgCourse = dataset.imagen;
     }
 
     $.ajax({
@@ -421,6 +464,7 @@ var courseUIManager = {
         nivel: dataset.level,
         ubicacion: dataset.location,
         ficha: dataImg,
+        imagen: dataImgCourse
       },
     }).done(function (msg) {
       alert("Curso Actualizado");
@@ -440,7 +484,8 @@ var courseUIManager = {
       document.getElementById("createLevel").value.trim().length === 0 ||
       document.getElementById("createLocation").value.trim().length === 0 ||
       document.getElementById("createSheet-name").value.trim().length === 0 ||
-      document.getElementById("createCurrency").value.trim().length === 0
+      document.getElementById("createCurrency").value.trim().length === 0 ||
+      document.getElementById("createImg-name").value.trim().length === 0
     ) {
       alert("Debes completar los campos para continuar");
       return false;
@@ -457,6 +502,7 @@ var courseUIManager = {
       level: document.getElementById("createLevel").value,
       location: document.getElementById("createLocation").value,
       sheet: document.getElementById("createSheet-file").files[0],
+      imagen:  document.getElementById("createImg-file").files[0],
     };
 
     messagesClient.updateSheetCourse(dataset.sheet);
@@ -474,8 +520,10 @@ var courseUIManager = {
         nivel: dataset.level,
         ubicacion: dataset.location,
         ficha: dataset.sheet.name,
+        imagen: dataset.imagen.name
       },
     }).done(function (msg) {
+      messagesClient.updateImgCourse(dataset.imagen);
       messagesClient.updateSheetCourse(dataset.sheet);
       alert("Curso creado");
       window.location.reload();

@@ -272,6 +272,8 @@ var excursionUIManager = {
       inputID.val(data.id);
       var inputName = $("#editName");
       inputName.val(data.nombre);
+      var inputImg = $("#editImgPrin-name");
+      inputImg.val(data.imagen);
       document.querySelector("#editDescription .ql-editor").innerHTML =
         data.descripcion;
       document.querySelector("#editTip .ql-editor").innerHTML = data.tip;
@@ -336,6 +338,8 @@ var excursionUIManager = {
     messagesClient.get(id, function (data) {
       var inputName = $("#item-name");
       inputName[0].innerText = data.nombre;
+      var inputImg = $("#item-img");
+      inputImg[0].innerHTML = ` <img src='assets/img/excursion/${data.imagen}'  style="width: 200px;"/>`;
       var inputDescription = $("#item-description");
       inputDescription[0].innerHTML = data.descripcion;
       var inputTip = $("#item-tip");
@@ -399,6 +403,7 @@ var excursionUIManager = {
   updateNews: function () {
     if (
       document.getElementById("editName").value.trim().length === 0 ||
+      document.getElementById("editImgPrin-name").value.trim().length === 0 ||
       document.querySelector("#editDescription .ql-editor").getInnerHTML()
         .length === 0 ||
       document.querySelector("#editTip .ql-editor").getInnerHTML().length ===
@@ -449,12 +454,19 @@ var excursionUIManager = {
       location: document.getElementById("editLocation").value,
       language: document.getElementById("editLanguage").value,
       sheet: document.getElementById("editSheet-file").value,
+      imagen: document.getElementById("editImgPrin-file").value,
     };
 
     if (dataset.imgTip == "") {
       dataset.imgTip = document.getElementById("editImg-name").value;
     } else {
       dataset.imgTip = document.getElementById("editImg-file").files[0];
+    }
+
+    if (dataset.imagen == "") {
+      dataset.imagen = document.getElementById("editImgPrin-name").value;
+    } else {
+      dataset.imagen = document.getElementById("editImgPrin-file").files[0];
     }
 
     if (dataset.sheet == "") {
@@ -465,11 +477,19 @@ var excursionUIManager = {
 
     var dataImg;
     var dataFile;
+    var dataImgCourse;
     if (typeof dataset.imgTip == "object") {
       dataImg = dataset.imgTip.name;
       messagesClient.updateImgService(dataset.imgTip);
     } else {
       dataImg = dataset.imgTip;
+    }
+
+    if (typeof dataset.imagen == "object") {
+      dataImgCourse = dataset.imagen.name;
+      messagesClient.updateImgService(dataset.imagen);
+    } else {
+      dataImgCourse = dataset.imagen;
     }
 
     if (typeof dataset.sheet == "object") {
@@ -504,6 +524,7 @@ var excursionUIManager = {
         lugar: dataset.location,
         idioma: dataset.language,
         ficha: dataFile,
+        imagen: dataImgCourse,
       },
     }).done(function (msg) {
       alert("Excursión Actualizado");
@@ -536,7 +557,8 @@ var excursionUIManager = {
       document.getElementById("createAge").value.trim().length === 0 ||
       document.getElementById("createLanguage").value.trim().length === 0 ||
       document.getElementById("createLocation").value.trim().length === 0 ||
-      document.getElementById("createSheet-file").value.trim().length === 0
+      document.getElementById("createSheet-file").value.trim().length === 0 ||
+      document.getElementById("createImgPrin-file").value.trim().length === 0
     ) {
       alert("Debes completar los campos para continuar");
       return false;
@@ -568,6 +590,7 @@ var excursionUIManager = {
       location: document.getElementById("createLocation").value,
       language: document.getElementById("createLanguage").value,
       sheet: document.getElementById("createSheet-file").files[0],
+      imgCourse: document.getElementById("createImgPrin-file").files[0],
     };
     $.ajax({
       method: "POST",
@@ -591,9 +614,11 @@ var excursionUIManager = {
         lugar: dataset.location,
         idioma: dataset.language,
         ficha: dataset.sheet.name,
+        imagen: dataset.imgCourse.name,
       },
     }).done(function (msg) {
       messagesClient.updateImgService(dataset.imgTip);
+      messagesClient.updateImgService(dataset.imgCourse);
       messagesClient.updateSheetService(dataset.sheet);
       alert("Excursion creada");
       window.location.reload();

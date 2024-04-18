@@ -25,6 +25,8 @@ if ($_GET['action'] == "list") {
     create();
 } else if ($_POST['action'] == "updateSheet") {
     updateSheet();
+} else if ($_POST['action'] == "updatePhoto") {
+    updateImage();
 } else if ($_POST['action'] == "delete") {
     delete();
 } else if ($_POST['action'] == "update") {
@@ -107,6 +109,30 @@ function updateSheet()
 
 }
 
+function updateImage()
+{
+    $target_dir = "../assets/img/course/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if ($check !== false) {
+        $uploadOk = 1;
+    } else {
+        $uploadOk = 0;
+    }
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+}
+
 function update()
 {
 
@@ -120,6 +146,7 @@ function update()
     $service_data[6] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
     $service_data[7] = filter_input(INPUT_POST, 'ubicacion', FILTER_SANITIZE_STRING);
     $service_data[8] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[9] = filter_input(INPUT_POST, 'imagen', FILTER_SANITIZE_STRING);
 
     $qres = $serviceManager->updateCourseById($service_data);
 
@@ -157,6 +184,7 @@ function create()
     $service_data[5] = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
     $service_data[6] = filter_input(INPUT_POST, 'ubicacion', FILTER_SANITIZE_STRING);
     $service_data[7] = filter_input(INPUT_POST, 'ficha', FILTER_SANITIZE_STRING);
+    $service_data[8] = filter_input(INPUT_POST, 'imagen', FILTER_SANITIZE_STRING);
     $qres = $serviceManager->createCourse($service_data);
 
     $response = array();
