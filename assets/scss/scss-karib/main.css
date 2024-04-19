@@ -634,6 +634,9 @@
     .k-theme-f .k-c-place-detail .tour-details-wrapper .place-content-wrap p a {
       color: #0085CF;
       font-weight: 600; }
+  .k-theme-f .k-c-place-detail .tour-details-wrapper .place-content-wrap ul {
+    list-style: disc;
+    margin-inline-start: 25px; }
   .k-theme-f .k-c-place-detail .tour-details-wrapper .place-content-wrap .check-list {
     margin-top: 0; }
     .k-theme-f .k-c-place-detail .tour-details-wrapper .place-content-wrap .check-list li {
@@ -660,6 +663,9 @@
         color: #0085CF; }
   .k-theme-f .k-c-place-detail .tour-details-wrapper .days-area .tab-content .tab-pane .content-box p {
     margin-bottom: 0px; }
+  .k-theme-f .k-c-place-detail .tour-details-wrapper .days-area .tab-content .tab-pane .content-box ul {
+    list-style: disc;
+    margin-inline-start: 25px; }
   .k-theme-f .k-c-place-detail .tour-details-wrapper .text-finish {
     color: #BCBCBC;
     font-size: 11px;

@@ -1278,6 +1278,11 @@
                     }
                 }
 
+                ul{
+                    list-style: disc;
+                    margin-inline-start: 25px;
+                }
+
                 .check-list {
                     margin-top: 0;
 
@@ -1327,6 +1332,10 @@
                         .content-box {
                             p {
                                 margin-bottom: 0px;
+                            }
+                            ul{
+                                list-style: disc;
+                                margin-inline-start: 25px;
                             }
                         }
                     }
