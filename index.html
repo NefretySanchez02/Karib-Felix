@@ -55,8 +55,7 @@
                 <div class="primary-menu">
                     <!--====== Site Branding ======-->
                     <div class="site-branding">
-                        <a href="#" class="brand-logo"><img src="assets/images/imgKarib/logo.png"
-                                alt="Site Logo"></a>
+                        <a href="#" class="brand-logo"><img src="assets/images/imgKarib/logo.png" alt="Site Logo"></a>
                     </div>
                     <!--====== Nav Menu ======-->
                     <div class="nav-menu">
@@ -237,30 +236,30 @@
                             <span class="sub-title">Disponibilidad</span>
                             <h2>Reserva tu próxima aventura</h2>
                         </div>
-                        <form class="booking-form">
+                        <form method="post" action="booking-form.php" class="booking-form">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form_group">
                                         <label><i class="far fa-calendar-alt"></i></label>
-                                        <input type="text" class="form_control datepicker" placeholder="Check In">
+                                        <input name="checkin" type="text" class="form_control datepicker" placeholder="Check In" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form_group">
                                         <label><i class="far fas fa-user"></i></label>
-                                        <input type="text" class="form_control datepicker" placeholder="Nombre">
+                                        <input name="name" type="text" class="form_control" placeholder="Nombre" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form_group">
                                         <label><i class="far fa-user-alt"></i></label>
-                                        <select class="wide">
-                                            <option data-display="Número de personas">Número de personas</option>
-                                            <option value="01">01 persona</option>
-                                            <option value="01">02 personas</option>
-                                            <option value="01">03 personas</option>
-                                            <option value="01">04 personas</option>
-                                            <option value="01">05 personas</option>
+                                        <select name="people" class="wide">
+                                            <option value="1" data-display="Número de personas">Número de personas</option>
+                                            <option value="1">01 persona</option>
+                                            <option value="2">02 personas</option>
+                                            <option value="3">03 personas</option>
+                                            <option value="4">04 personas</option>
+                                            <option value="5">05 personas</option>
                                         </select>
                                     </div>
                                 </div>
@@ -494,7 +493,7 @@
                 </div>
             </div>
             <div class="row wow fadeInUp" id="excursion-index">
-               
+
             </div>
         </div>
     </section><!--====== End Services Section ======-->
@@ -1031,11 +1030,12 @@
                             <h4 class="widget-title">Noticias</h4>
                             <div class="footer-content">
                                 <p>Suscríbete a nuestro boletín mensual y mantente informado.</p>
-                                <form>
+                                <form id="newsletter-form" method="post" action="javascript:void(0);"
+                                    onsubmit="SendNewsletter()">
                                     <div class="form_group">
-                                        <label><i class="far fa-calendar-alt"></i></label>
+                                        <label></label>
                                         <input type="email" class="form_control" placeholder="Correo electrónico"
-                                            name="email" required>
+                                            name="email_suscription" required>
                                     </div>
                                 </form>
                             </div>
@@ -1049,7 +1049,8 @@
                     <div class="col-lg-6">
                         <!--=== Footer Text ===-->
                         <div class="footer-text">
-                            <p>Copy© 2023 <span style="color: #FF6601;">GESPROIS</span>. Todos los derechos reservados.</p>
+                            <p>Copy© 2023 <span style="color: #FF6601;">GESPROIS</span>. Todos los derechos reservados.
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -1091,6 +1092,7 @@
     <script src="assets/js/theme.js"></script>
     <script type="text/javascript" src="assets/js/js_backoffice/application.js"></script>
     <script src="assets/js/js_backoffice/excursion.js"></script>
+    <script src="assets/js/js_backoffice/newsletter.js"></script>
 
     <script>
         excursionClient.listIndexIndex();

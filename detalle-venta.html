@@ -521,11 +521,12 @@
                             <h4 class="widget-title">Noticias</h4>
                             <div class="footer-content">
                                 <p>Suscríbete a nuestro boletín mensual y mantente informado.</p>
-                                <form>
+                                <form id="newsletter-form" method="post" action="javascript:void(0);"
+                                    onsubmit="SendNewsletter()">
                                     <div class="form_group">
-                                        <label><i class="far fa-calendar-alt"></i></label>
+                                        <label></label>
                                         <input type="email" class="form_control" placeholder="Correo electrónico"
-                                            name="email" required>
+                                            name="email_suscription" required>
                                     </div>
                                 </form>
                             </div>

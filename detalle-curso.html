@@ -78,7 +78,7 @@
                                 </li>
                                 <li class="menu-item"><a href="cursos.html" class="active">Cursos</a>
                                 </li>
-                               <!--  <li class="menu-item"><a href="ventas.html">Venta de equipos</a>
+                                <!--  <li class="menu-item"><a href="ventas.html">Venta de equipos</a>
                                 </li>
                                 <li class="menu-item"><a href="blog.html">KariBlog</a>
                                 </li> -->
@@ -316,7 +316,7 @@
                                         </div>
                                     </div>
                                     <div class="submit-button" id="ComprasPaypal">
-                                         <!--<a href="#ComprasPaypal" class="main-btn primary-btn btn-comprar">Comprar ahora
+                                        <!--<a href="#ComprasPaypal" class="main-btn primary-btn btn-comprar">Comprar ahora
                                             <i>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                                                     viewBox="0 0 21 21" fill="none">
@@ -329,27 +329,27 @@
                                     </div>
                                 </form>
                             </div>
-                             <!-- Modal -->
-                             <div class="modal fade" id="paypalModal" tabindex="-1" role="dialog"
-                             aria-labelledby="paypalModalLabel" aria-hidden="true">
-                             <div class="modal-dialog" role="document">
-                                 <div class="modal-content">
-                                     <div class="modal-header">
-                                         <h5 class="modal-title" id="paypalModalLabel">Informe de la transacción</h5>
-                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                             <span aria-hidden="true">&times;</span>
-                                         </button>
-                                     </div>
-                                     <div class="modal-body">
-                                         <p id="paypalMessage"></p>
-                                     </div>
-                                     <div class="modal-footer">
-                                         <button type="button" class="btn btn-secondary"
-                                             data-dismiss="modal">Cerrar</button>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="paypalModal" tabindex="-1" role="dialog"
+                                aria-labelledby="paypalModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="paypalModalLabel">Informe de la transacción</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p id="paypalMessage"></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -516,7 +516,7 @@
                                 <ul class="footer-widget-nav">
                                     <li><a href="excursiones.html">Excursiones</a></li>
                                     <li><a href="cursos.html">Cursos</a></li>
-                                 <!--    <li><a href="#">Alquiler</a></li>
+                                    <!--    <li><a href="#">Alquiler</a></li>
                                     <li><a href="ventas.html">Venta de equipos</a></li> -->
                                 </ul>
                                 <ul class="footer-widget-nav">
@@ -533,11 +533,12 @@
                             <h4 class="widget-title">Noticias</h4>
                             <div class="footer-content">
                                 <p>Suscríbete a nuestro boletín mensual y mantente informado.</p>
-                                <form>
+                                <form id="newsletter-form" method="post" action="javascript:void(0);"
+                                    onsubmit="SendNewsletter()">
                                     <div class="form_group">
-                                        <label><i class="far fa-calendar-alt"></i></label>
+                                        <label></label>
                                         <input type="email" class="form_control" placeholder="Correo electrónico"
-                                            name="email" required>
+                                            name="email_suscription" required>
                                     </div>
                                 </form>
                             </div>

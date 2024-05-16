@@ -210,7 +210,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="contact-area contact-form wow fadeInUp">
-                        <form id="contactForm" class="contactForm" action="#" name="contactForm" method="post">
+                        <form id="contactForm" class="contactForm" action="contact-form.php" name="contactForm" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form_group form-group">
@@ -229,14 +229,14 @@
                                 <div class="col-lg-6">
                                     <div class="form_group form-group">
                                         <input type="text" placeholder="Teléfono" class="form_control" id="phone_number"
-                                            name="phone_number" required data-error="Por favor ingresar su numero">
+                                            name="phone" required data-error="Por favor ingresar su numero">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form_group form-group">
                                         <input type="text" placeholder="Ciudad" class="form_control" id="website"
-                                            name="website" required data-error="Por favor ingrese su ciudad">
+                                            name="city" required data-error="Por favor ingrese su ciudad">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -444,11 +444,12 @@
                             <h4 class="widget-title">Noticias</h4>
                             <div class="footer-content">
                                 <p>Suscríbete a nuestro boletín mensual y mantente informado.</p>
-                                <form>
+                                <form id="newsletter-form" method="post" action="javascript:void(0);"
+                                    onsubmit="SendNewsletter()">
                                     <div class="form_group">
-                                        <label><i class="far fa-calendar-alt"></i></label>
+                                        <label></label>
                                         <input type="email" class="form_control" placeholder="Correo electrónico"
-                                            name="email" required>
+                                            name="email_suscription" required>
                                     </div>
                                 </form>
                             </div>
